@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Sponsor extends Model
+class Ticket extends Model
 {
     use HasFactory;
 
@@ -14,8 +14,8 @@ class Sponsor extends Model
 
     ];
 
-    public function events(): BelongsToMany
+    public function tickettypes(): BelongsTo
     {
-        return $this->belongsToMany(Event::class);
+        return $this->belongsTo(TicketType::class);
     }
 }

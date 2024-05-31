@@ -15,9 +15,9 @@ class Post extends Model
 
     ];
 
-    public function evenements(): BelongsTo
+    public function events(): BelongsTo
     {
-        return $this->belongsTo(Evenement::class);
+        return $this->belongsTo(Event::class);
     }
 
     public function commentaires(): HasMany

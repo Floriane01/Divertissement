@@ -12,18 +12,18 @@
     </div>
     <div class="card-body fs-10">
         <div class="row">
-            @foreach ($evenements as $evenement)
+            @foreach ($events as $event)
                 <div class="col-md-6 h-100">
                     <div class="d-flex btn-reveal-trigger">
                         <div class="calendar">
                             <span class="calendar-month">
-                                {{$evenement->exists ? $evenement->date : ''}}
+                                {{$event->exists ? $event->date : ''}}
                             </span>
                         </div>
                         <div class="flex-1 position-relative ps-3">
                             <h6 class="fs-9 mb-0">
                                 <a href="#!">
-                                    {{$evenement->exists ? $evenement->nom : ''}}
+                                    {{$event->exists ? $event->nom : ''}}
                                 </a>
                             </h6>
                             <p class="mb-1">
@@ -33,10 +33,10 @@
                                 </a>
                             </p>
                             <p class="text-1000 mb-0">
-                                {{$evenement->exists ? $evenement->heure : ''}}
+                                {{$event->exists ? $event->heure : ''}}
                             </p>
                             <p class="text-1000 mb-0">
-                                {{$evenement->exists ? $evenement->lieu : ''}}
+                                {{$event->exists ? $event->lieu : ''}}
                             </p>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Evenement;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,19 +12,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('evenements', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nom');
-            $table->string('theme');
-            $table->date('date_debut');
-            $table->date('date_fin');
-            $table->string('lieu');
-            $table->integer('prix');
-            $table->time('horaire');
-            $table->string('description');
+        Schema::create('ticket_types', function (Blueprint $table) {
+            $table->id();
+            $table->string('libelle');
             $table->string('image');
-            $table->boolean('statut');
-            $table->date('deadline');
+            $table->integer('prix');
+            $table->string('mode_presence');
+            $table->foreignIdFor(Evenement::class)->constrained()->cascadeOnDelete();
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->string('deleted_by')->nullable();
@@ -36,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('evenements');
+        Schema::dropIfExists('ticket_types');
     }
 };

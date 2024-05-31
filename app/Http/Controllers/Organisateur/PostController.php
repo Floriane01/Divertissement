@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
-use App\Http\Requests\PostStoreRequest;
-use App\Http\Requests\PostUpdateRequest;
 use App\Models\Evenement;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -24,7 +22,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.evenements.show', [
+        return view('organisateur.post.form', [
             'post' => new Post()
         ]);
     }
@@ -46,7 +44,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('user.evenement.show', [
+        return view('organisateur.evenement.show', [
             'post' => $post
         ]);
     }
@@ -56,7 +54,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.evenements.show', [
+        return view('organisateur.post.form', [
             'post' => $post
         ]);
     }

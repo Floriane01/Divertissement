@@ -22,13 +22,13 @@
           <h5 class="mb-0">Les détails de l'évènement</h5>
         </div>
         <div class="card-body bg-body-tertiary">
-          <form method="POST" action="{{ route($evenement->exists ? 'evenements.update' : 'evenements.store',  ['evenement' => $evenement->id])}}">
+          <form method="POST" action="{{ route($event->exists ? 'events.update' : 'events.store',  ['event' => $event->id])}}">
             @csrf
-            @method($evenement->exists ? 'put' : 'post')
+            @method($event->exists ? 'put' : 'post')
             <div class="row gx-2">
               <div class="col-12 mb-3">
                 <label class="form-label" for="event-name">Titre de l'évènement</label>
-                <input class="form-control" @error('nom') is-invalid @enderror id="event-name" type="text"  value="{{$evenement->exists ? $evenement->nom : ''}}" />
+                <input class="form-control" @error('nom') is-invalid @enderror id="event-name" type="text"  value="{{$event->exists ? $event->nom : ''}}" />
                 @error('nom')
                     <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                 @enderror
@@ -36,7 +36,7 @@
 
               <div class="col-12 mb-3">
                 <label class="form-label" for="event-name">Thème de l'évènement</label>
-                <input class="form-control" @error('theme') is-invalid @enderror id="event-name" type="text" value="{{$evenement->exists ? $evenement->theme : ''}}" />
+                <input class="form-control" @error('theme') is-invalid @enderror id="event-name" type="text" value="{{$event->exists ? $event->theme : ''}}" />
                 @error('theme')
                     <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                 @enderror
@@ -44,7 +44,7 @@
 
               <div class="col-sm-6 mb-3">
                 <label class="form-label" for="start-date">Date de début</label>
-                <input class="form-control datetimepicker" @error('date_debut') is-invalid @enderror id="start-date" type="text"  data-options='{"dateFormat":"d/m/y","disableMobile":true}'  value="{{$evenement->exists ? $evenement->date_debut : ''}}"/>
+                <input class="form-control datetimepicker" @error('date_debut') is-invalid @enderror id="start-date" type="text"  data-options='{"dateFormat":"d/m/y","disableMobile":true}'  value="{{$event->exists ? $event->date_debut : ''}}"/>
                 @error('date_debut')
                     <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                 @enderror
@@ -52,7 +52,7 @@
 
               <div class="col-sm-6 mb-3">
                 <label class="form-label" for="start-time">Heure de début</label>
-                <input class="form-control datetimepicker" @error('horaire') is-invalid @enderror id="start-time" type="text" placeholder="H:i" data-options='{"enableTime":true,"noCalendar":true,"dateFormat":"H:i","disableMobile":true}' value="{{$evenement->exists ? $evenement->horaire : ''}}"/>
+                <input class="form-control datetimepicker" @error('horaire') is-invalid @enderror id="start-time" type="text" placeholder="H:i" data-options='{"enableTime":true,"noCalendar":true,"dateFormat":"H:i","disableMobile":true}' value="{{$event->exists ? $event->horaire : ''}}"/>
                 @error('horaire')
                     <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                 @enderror
@@ -60,7 +60,7 @@
 
               <div class="col-sm-6 mb-3">
                 <label class="form-label" for="end-date">Date de fin</label>
-                <input class="form-control datetimepicker" @error('date_fin') is-invalid  @enderror id="end-date" type="text" placeholder="dd/mm/yy" data-options='{"dateFormat":"d/m/y","disableMobile":true}'  value="{{$evenement->exists ? $evenement->date_fin : ''}}"/>
+                <input class="form-control datetimepicker" @error('date_fin') is-invalid  @enderror id="end-date" type="text" placeholder="dd/mm/yy" data-options='{"dateFormat":"d/m/y","disableMobile":true}'  value="{{$event->exists ? $event->date_fin : ''}}"/>
                 @error('date_fin')
                     <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                 @enderror
@@ -68,7 +68,7 @@
 
               <div class="col-sm-6">
                 <label class="form-label" for="registration-deadline">Date limite d'inscription</label>
-                <input class="form-control datetimepicker" @error('deadline') is-invalid @enderror id="registration-deadline" type="text" placeholder="dd/mm/yy" data-options='{"dateFormat":"d/m/y","disableMobile":true}' value="{{$evenement->exists ? $evenement->deadline : ''}}"/>
+                <input class="form-control datetimepicker" @error('deadline') is-invalid @enderror id="registration-deadline" type="text" placeholder="dd/mm/yy" data-options='{"dateFormat":"d/m/y","disableMobile":true}' value="{{$event->exists ? $event->deadline : ''}}"/>
                 @error('deadline')
                     <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                 @enderror
@@ -76,7 +76,7 @@
 
             <div class="col-sm-6">
                 <label class="form-label" for="registration-deadline">Lieu</label>
-                <input class="form-control datetimepicker" @error('lieu') is-invalid @enderror id="registration-deadline" type="text" value="{{$evenement->exists ? $evenement->lieu : ''}}"/>
+                <input class="form-control datetimepicker" @error('lieu') is-invalid @enderror id="registration-deadline" type="text" value="{{$event->exists ? $event->lieu : ''}}"/>
                 @error('lieu')
                     <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                 @enderror
@@ -88,7 +88,7 @@
 
               <div class="col-sm-6 mb-3">
                 <label class="form-label" for="event-address">Statut</label>
-                <input class="form-control" @error('statut') is-invalid @enderror id="event-address" type="text" value="{{$evenement->exists ? $evenement->statut : ''}}" />
+                <input class="form-control" @error('statut') is-invalid @enderror id="event-address" type="text" value="{{$event->exists ? $event->statut : ''}}" />
                 @error('statut')
                     <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                 @enderror
@@ -96,7 +96,7 @@
 
               <div class="col-12">
                 <label class="form-label" for="event-description">Description</label>
-                <textarea class="form-control" @error('description') is-invalid @enderror id="event-description" rows="6" value="{{$evenement->exists ? $evenement->description : ''}}"> </textarea>
+                <textarea class="form-control" @error('description') is-invalid @enderror id="event-description" rows="6" value="{{$event->exists ? $event->description : ''}}"> </textarea>
                 @error('description')
                     <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                 @enderror
@@ -215,7 +215,7 @@
                         <option>Food &amp; Drink</option>
                         <option>Government &amp; Politics</option>
                     </select>
-                </div> --}} 
+                </div> --}}
 
                 </div>
         </div>

@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Evenement;
+use App\Http\Controllers\Admin\CategorieController;
 use App\Http\Controllers\Admin\EvenementController;
-use App\Http\Controllers\TypeEvenement;
-use App\Http\Controllers\Admin\TypeEvenementController;
-use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\Admin\TicketController;
+use App\Http\Controllers\Admin\TicketTypeController;
+use App\Http\Controllers\Admin\UtilisateurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,13 +32,20 @@ Route::prefix('admin')->group(function () {
 
     Route::resources([
         "evenements" => EvenementController::class,
-        "categories" => TypeEvenementController::class,
+        "categorie" => CategorieController::class,
+        "ticket" => TicketController::class,
+        "tickettype" => TicketTypeController::class,
+        "user" => UtilisateurController::class,
+        // "dashboard" => AdminController::class,
     ]);
 });
 
-Route::prefix('organisateur')->group(function () {
-    Route::resources([
-        "evenements" => EvenementController::class,
-        "sponsor" => SponsorController::class,
-    ]);
-});
+// Route::prefix('organisateur')->group(function () {
+//     Route::resources([
+//         "events" => EventController::class,
+//         "sponsors" => SponsorController::class,
+//         "posts" => PostController::class,
+//     ]);
+// });
+
+

@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\UtilisateurStoreRequest;
 use App\Http\Requests\UtilisateurUpdateRequest;
 use App\Models\Role;
+use App\Models\User;
 use App\Models\Utilisateur;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,7 @@ class UtilisateurController extends Controller
      */
     public function index()
     {
-        $utilisateurs = Utilisateur::all();
+        $utilisateurs = User::all();
         return view('admin.users.index', compact('utilisateurs'));
     }
 
@@ -47,7 +49,7 @@ class UtilisateurController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Utilisateur $utilisateur)
+    public function show(User $utilisateur)
     {
         $roles = Role::all();
         return view('admin.users', compact("utilisateurs"), [
@@ -58,7 +60,7 @@ class UtilisateurController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Utilisateur $utilisateur)
+    public function edit(User $utilisateur)
     {
         $roles = Role::all();
         return view('admin.users.form', [
@@ -84,7 +86,7 @@ class UtilisateurController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UtilisateurUpdateRequest $request, Utilisateur $utilisateur)
+    public function update(UtilisateurUpdateRequest $request, User $utilisateur)
     {
         $utilisateur->update($request->validated());
 
@@ -96,7 +98,7 @@ class UtilisateurController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Utilisateur $utilisateur)
+    public function destroy(User $utilisateur)
     {
         $utilisateur->delete();
 

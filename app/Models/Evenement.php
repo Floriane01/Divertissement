@@ -18,13 +18,18 @@ class Evenement extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function typeevenements(): BelongsToMany
+    public function categorieevenements(): BelongsToMany
     {
-        return $this->belongsToMany(TypeEvenement::class);
+        return $this->belongsToMany(CategorieEvenement::class);
     }
 
-    public function posts(): HasMany
+    public function tickets(): HasMany
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function tickettypes(): HasMany
+    {
+        return $this->hasMany(TicketType::class);
     }
 }

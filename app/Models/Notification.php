@@ -9,9 +9,10 @@ class Notification extends Model
 {
     use HasFactory;
 
+    use HasFactory;
 
-    public function evenement()
-    {
-        return $this->belongsTo(Evenement::class);
-    }
+    protected $guarded = [
+
+    ];
+
 }

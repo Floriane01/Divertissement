@@ -36,11 +36,13 @@ class EvenementController extends Controller
      */
     public function store( EvenementRequest $request)
     {
-        Evenement::create($request->validated());
+        // Evenement::create($request->validated());
+        dd($request);
+        $image = $request->file('image');
 
         return redirect()
             ->route('evenements.index')
-            ->with('success', "L'évènement a bien été ajoutée");
+            ->with('success', "L'évènement a bien été ajouté");
     }
 
     /**
@@ -88,22 +90,22 @@ class EvenementController extends Controller
             ->with('success', "L'évènement a bien été supprimé");
     }
 
-    public function soumettreEvenement(EvenementRequest $request)
-    {
+    // public function soumettreEvenement(EvenementRequest $request)
+    // {
 
-        $evenement = Evenement::create($request->validated());
+    //     $evenement = Evenement::create($request->validated());
 
-        // Maintenant je pense qu'à ce niveau il me faut un code pour gérer le paiement de la comission hein maintenant reste à savoir comment je vais gérer ça
-
-
-        $$notification = Notification::create([
-            'message' => 'Nouvel événement soumis : ' . $evenement->titre
-        ]);
+    //     // Maintenant je pense qu'à ce niveau il me faut un code pour gérer le paiement de la comission hein maintenant reste à savoir comment je vais gérer ça
 
 
-        return redirect()
-            ->route()
-            ->with('success', 'Événement soumis avec succès !');
-    }
+    //     $$notification = Notification::create([
+    //         'message' => 'Nouvel événement soumis : ' . $evenement->titre
+    //     ]);
+
+
+    //     return redirect()
+    //         ->route()
+    //         ->with('success', 'Événement soumis avec succès !');
+    // }
 
 }

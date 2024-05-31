@@ -4,11 +4,11 @@
 
 <div class="d-flex align-items-center justify-content-between my-3 bg-white rounded" style="padding: 10px;">
     <div>
-        Liste des catégories
+        Liste des types de ticket
     </div>
     <div>
         {{-- style="text-decoration: none; color:white; padding: 8px; background-color: blue; border-radius: 4px;" --}}
-        <a href="{{ route('categorie.create') }}" class="btn btn-falcon-success btn-sm cursor-pointer">
+        <a href="{{ route('categories.create') }}" class="btn btn-falcon-success btn-sm cursor-pointer">
             <span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span>
             <span class="ms-1">Nouveau</span>
         </a>
@@ -31,27 +31,27 @@
       <table class="table table-bordered table-striped fs-10 mb-0">
         <thead class="bg-200">
           <tr>
-            <th class="text-900 sort" data-sort="nom">Catégorie</th>
+            <th class="text-900 sort" data-sort="nom">Type de ticket</th>
             <th class="text-end" scope="col">Actions</th>
           </tr>
         </thead>
         <tbody class="list">
-          @foreach ($categories as $categorie)
+          @foreach ($tickettypes as $tickettype)
             <tr>
-                <td class="nom">{{ $categorie->nom }}</td>
+                <td class="nom">{{ $tickettype->libelle }}</td>
                 <td class="text-end">
                     <div>
-                        <a href="{{ route('categorie.edit', ['categorie' => $categorie->id]) }}" class="btn btn-link p-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                        <a href="{{ route('tickettypes.edit', ['tickettype' => $tickettype->id]) }}" class="btn btn-link p-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                             <span class="text-500 fas fa-edit"></span>
                         </a>
-                        <button  class="btn btn-link p-0 ms-2" data-bs-placement="top" title="Delete" data-bs-toggle="modal" data-bs-target="#error-modal{{$categorie->id}}">
+                        <button  class="btn btn-link p-0 ms-2" data-bs-placement="top" title="Delete" data-bs-toggle="modal" data-bs-target="#error-modal{{$tickettype->id}}">
                             <span class="text-500 fas fa-trash-alt"></span>
                         </button>
-                        <form action="{{ route('categorie.destroy', ['categorie' => $categorie->id]) }}" method="post" style="display: none" id="delete-form-{{$categorie->id}}">
+                        <form action="{{ route('tickettypes.destroy', ['tickettype' => $tickettype->id]) }}" method="post" style="display: none" id="delete-form-{{$tickettype->id}}">
                             @csrf
                             @method('delete')
                         </form>
-                        <div class="modal fade" id="error-modal{{$categorie->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal fade" id="error-modal{{$tickettype->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
                                 <div class="modal-content position-relative">
                                     <div class="position-absolute top-0 end-0 mt-2 me-2 z-1">
@@ -63,13 +63,13 @@
                                         </div>
                                         <div class="p-4 pb-0">
                                             <div>
-                                                <h5>Êtes-vous sûr de vouloir supprimer {{ $categorie->nom }}</h5>
+                                                <h5>Êtes-vous sûr de vouloir supprimer {{ $tickettype->libelle }}</h5>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Annuler</button>
-                                        <button type="submit" form="delete-form-{{$categorie->id}}" class="btn btn-primary" type="button">Supprimer </button>
+                                        <button type="submit" form="delete-form-{{$tickettype->id}}" class="btn btn-primary" type="button">Supprimer </button>
                                     </div>
                                 </div>
                             </div>

@@ -22,8 +22,8 @@ class CommentaireController extends Controller
      */
     public function create()
     {
-        return view('user.evenement.show', [
-            'evenement' => new Commentaire()
+        return view('user.commentaire.form', [
+            'post' => new Commentaire()
         ]);
     }
 
@@ -35,7 +35,7 @@ class CommentaireController extends Controller
         Commentaire::create(($request->validated()));
 
         return redirect()
-            ->route('evenements.show')
+            ->route('posts.show')
             ->with('success', "Le commentaire a bien été ajputé");
     }
 
@@ -44,7 +44,7 @@ class CommentaireController extends Controller
      */
     public function show(Commentaire $commentaire)
     {
-        return view('user.evenement.show', [
+        return view('organisateur.evenement.show', [
             'commentaire' => $commentaire
         ]);
     }
@@ -54,7 +54,7 @@ class CommentaireController extends Controller
      */
     public function edit(Commentaire $commentaire)
     {
-        return view('user.evenement.show', [
+        return view('user.commentaire.form', [
             'commentaire' => $commentaire
         ]);
     }

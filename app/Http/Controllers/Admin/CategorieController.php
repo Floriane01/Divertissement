@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\TypeEvenementRequest;
-use App\Models\TypeEvenement;
+use App\Http\Requests\CategorieRequest;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
-class TypeEvenementController extends Controller
+class CategorieController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = TypeEvenement::all();
+        $categories = Categorie::all();
         return view('admin.categories.index', compact("categories"));
     }
 
@@ -24,26 +24,26 @@ class TypeEvenementController extends Controller
     public function create()
     {
         return view('admin.categories.form', [
-            'categorie' => new TypeEvenement(),
+            'categorie' => new Categorie(),
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TypeEvenementRequest $request)
+    public function store(CategorieRequest $request)
     {
-        TypeEvenement::create($request->validated());
+        Categorie::create($request->validated());
 
         return redirect()
-            ->route('categories.index')
+            ->route('categorie.index')
             ->with('success', "Le type d'évènement a bien été ajouté");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(TypeEvenement $categorie)
+    public function show(Categorie $categorie)
     {
 
     }
@@ -51,8 +51,9 @@ class TypeEvenementController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TypeEvenement $categorie)
+    public function edit(Categorie $categorie)
     {
+        // dd($categorie);
         return view('admin.categories.form', [
             'categorie' => $categorie
         ]);
@@ -61,22 +62,23 @@ class TypeEvenementController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(TypeEvenementRequest $request, TypeEvenement $categorie)
+    public function update(CategorieRequest $request, Categorie $categorie)
     {
+        $categorie->update($request->validated());
         return redirect()
-            ->route('categories.index')
+            ->route('categorie.index')
             ->with('success', "Le type d'évènement a été modifié");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TypeEvenement $categorie)
+    public function destroy(Categorie $categorie)
     {
         $categorie->delete();
 
         return redirect()
-            ->route('categories.index')
+            ->route('categorie.index')
             ->with('success', "Le type d'évènement a été supprimé");
     }
 }

@@ -25,38 +25,39 @@
           <form method="POST" action="{{ route($evenement->exists ? 'evenements.update' : 'evenements.store',  ['evenement' => $evenement->id])}}">
             @csrf
             @method($evenement->exists ? 'put' : 'post')
+
             <div class="row gx-2">
-              <div class="col-12 mb-3">
-                <label class="form-label" for="event-name">Titre de l'évènement</label>
-                <input class="form-control" @error('nom') is-invalid @enderror id="event-name" type="text"  value="{{$evenement->exists ? $evenement->nom : ''}}" />
-                @error('nom')
-                    <span style="color: red; font-size: 0.7rem">{{$message}}</span>
-                @enderror
-            </div>
+                <div class="col-12 mb-3">
+                    <label class="form-label" for="event-name">Nom de l'évènement</label>
+                    <input class="form-control" @error('nom') is-invalid @enderror id="event-name" type="text"  value="{{$evenement->exists ? $evenement->nom : ''}}" />
+                    @error('nom')
+                        <span style="color: red; font-size: 0.7rem">{{$message}}</span>
+                    @enderror
+                </div>
 
-              <div class="col-12 mb-3">
-                <label class="form-label" for="event-name">Thème de l'évènement</label>
-                <input class="form-control" @error('theme') is-invalid @enderror id="event-name" type="text" value="{{$evenement->exists ? $evenement->theme : ''}}" />
-                @error('theme')
-                    <span style="color: red; font-size: 0.7rem">{{$message}}</span>
-                @enderror
-            </div>
+                <div class="col-12 mb-3">
+                    <label class="form-label" for="event-name">Thème de l'évènement</label>
+                    <input class="form-control" @error('theme') is-invalid @enderror id="event-name" type="text" value="{{$evenement->exists ? $evenement->theme : ''}}" />
+                    @error('theme')
+                        <span style="color: red; font-size: 0.7rem">{{$message}}</span>
+                    @enderror
+                </div>
 
-              <div class="col-sm-6 mb-3">
-                <label class="form-label" for="start-date">Date de début</label>
-                <input class="form-control datetimepicker" @error('date_debut') is-invalid @enderror id="start-date" type="text"  data-options='{"dateFormat":"d/m/y","disableMobile":true}'  value="{{$evenement->exists ? $evenement->date_debut : ''}}"/>
-                @error('date_debut')
-                    <span style="color: red; font-size: 0.7rem">{{$message}}</span>
-                @enderror
-            </div>
+                <div class="col-sm-6 mb-3">
+                    <label class="form-label" for="start-date">Date de début</label>
+                    <input class="form-control datetimepicker" @error('date_debut') is-invalid @enderror id="start-date" type="text"  data-options='{"dateFormat":"d/m/y","disableMobile":true}'  value="{{$evenement->exists ? $evenement->date_debut : ''}}"/>
+                    @error('date_debut')
+                        <span style="color: red; font-size: 0.7rem">{{$message}}</span>
+                    @enderror
+                </div>
 
-              <div class="col-sm-6 mb-3">
-                <label class="form-label" for="start-time">Heure de début</label>
-                <input class="form-control datetimepicker" @error('horaire') is-invalid @enderror id="start-time" type="text" placeholder="H:i" data-options='{"enableTime":true,"noCalendar":true,"dateFormat":"H:i","disableMobile":true}' value="{{$evenement->exists ? $evenement->horaire : ''}}"/>
-                @error('horaire')
-                    <span style="color: red; font-size: 0.7rem">{{$message}}</span>
-                @enderror
-            </div>
+                <div class="col-sm-6 mb-3">
+                    <label class="form-label" for="start-time">Heure de début</label>
+                    <input class="form-control datetimepicker" @error('horaire') is-invalid @enderror id="start-time" type="text" placeholder="H:i" data-options='{"enableTime":true,"noCalendar":true,"dateFormat":"H:i","disableMobile":true}' value="{{$evenement->exists ? $evenement->horaire : ''}}"/>
+                    @error('horaire')
+                        <span style="color: red; font-size: 0.7rem">{{$message}}</span>
+                    @enderror
+                </div>
 
               <div class="col-sm-6 mb-3">
                 <label class="form-label" for="end-date">Date de fin</label>
