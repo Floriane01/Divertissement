@@ -18,9 +18,14 @@ class Evenement extends Model
         return $this->belongsToMany(User::class);
     }
 
-    public function categorieevenements(): BelongsToMany
+    public function sponsors(): BelongsToMany
     {
-        return $this->belongsToMany(CategorieEvenement::class);
+        return $this->belongsToMany(Sponsor::class);
+    }
+
+    public function categorie(): BelongsToMany
+    {
+        return $this->belongsToMany(Categorie::class);
     }
 
     public function tickets(): HasMany

@@ -22,10 +22,11 @@ class TicketTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'libelle' => ['required', 'string'],
-            'image' => ['required', 'string'],
+            'option' => ['required', 'string'],
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'prix' => ['required', 'integer'],
-            'mode_presence' => ['required', 'string'],
+            'evenement_id' => ['required', 'exists:evenements,id', 'integer'],
+            'mode_presence' => ['nullable', 'string'],
         ];
     }
 }

@@ -9,9 +9,26 @@
     <script src={{asset("vendors/dayjs/dayjs.min.js")}}></script>
     <script src={{asset("vendors/fontawesome/all.min.js")}}></script>
     <script src={{asset("vendors/lodash/lodash.min.js")}}></script>
+    <script src={{asset("vendors/choices/choices.min.js")}}></script>
+    <script src={{asset("vendors/dropzone/dropzone.min.js")}}></script>
     {{-- <script src={{asset("../../../polyfill.io/v3/polyfill.min58be.js?features=window.scroll")}}></script> --}}
     <script src={{asset("vendors/list.js/list.min.js")}}></script>
     <script src={{asset("assets/js/theme.js")}}></script>
+    <script src={{asset("assets/js/flatpickr.js")}}></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
+    <script>
+        document.querySelectorAll('select[multiple]').forEach((el)=>{
+            new TomSelect(el, {
+                create: true,
+                plugins: {
+                    remove_button:{
+                        title:'Remove this item',
+                    }
+                },
+            })
+        });
+    </script>
 </body>
 
 

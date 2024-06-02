@@ -27,10 +27,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
     <link href="{{asset('vendors/simplebar/simplebar.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendors/flatpickr/flatpickr.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('vendors/choices/choices.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('vendors/dropzone/dropzone.min.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/theme-rtl.min.css')}}" rel="stylesheet" id="style-rtl">
     <link href="{{asset('assets/css/theme.min.css')}}" rel="stylesheet" id="style-default">
     <link href="{{asset('assets/css/user-rtl.min.css')}}" rel="stylesheet" id="user-style-rtl">
     <link href="{{asset('assets/css/user.min.css')}}" rel="stylesheet" id="user-style-default">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
     <script>
       var isRTL = JSON.parse(localStorage.getItem('isRTL'));
       if (isRTL) {

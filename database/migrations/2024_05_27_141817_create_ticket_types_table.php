@@ -14,10 +14,10 @@ return new class extends Migration
     {
         Schema::create('ticket_types', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle');
-            $table->string('image');
+            $table->string('option');
+            $table->string('image')->nullable();
             $table->integer('prix');
-            $table->string('mode_presence');
+            $table->string('mode_presence')->nullable();
             $table->foreignIdFor(Evenement::class)->constrained()->cascadeOnDelete();
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();

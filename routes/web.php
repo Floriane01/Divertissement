@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+$idRegex = '[0-9]+';
+
 Route::get('/', function () {
     return view('welcome');
 })->middleware('auth');
@@ -39,6 +41,11 @@ Route::prefix('admin')->group(function () {
         // "dashboard" => AdminController::class,
     ]);
 });
+
+Route::post('ticket-type/{evenement}', [EvenementController::class, 'setTicketType'])->name('setTicketType')
+->where([
+    'transfert' => $idRegex
+]);
 
 // Route::prefix('organisateur')->group(function () {
 //     Route::resources([

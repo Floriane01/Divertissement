@@ -23,13 +23,17 @@ class EvenementRequest extends FormRequest
     {
         return [
             'nom' => ['required', 'string'],
-            'date' => ['required', 'max:191', 'date'],
+            'theme' => ['nullable', 'string'],
+            'date_debut' => ['required', 'date_format:Y-m-d'],
+            'date_fin' => ['required', 'date_format:Y-m-d'],
+            'date_limite' => ['required', 'date_format:Y-m-d'],
             'lieu' => ['required', 'string'],
-            'prix' => ['required', 'integer'],
-            'horaire' => ['required', 'time'],
+            'heure_debut' => ['required', 'date_format:H:i'],
             'description' => ['required', 'string'],
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'statut' => ['required', 'boolean'],
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'statut' => ['boolean'],
+            'organisateur' => ['nullable', 'array'],
+            'sponsors' => ['nullable', 'array']
         ];
     }
 }

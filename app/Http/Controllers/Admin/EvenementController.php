@@ -5,8 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EvenementRequest;
 use App\Http\Requests\EvenementStoreRequest;
+use App\Http\Requests\TicketTypeRequest;
 use App\Models\Evenement;
+use App\Models\Sponsor;
+use App\Models\TicketType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class EvenementController extends Controller
 {
@@ -27,8 +32,6 @@ class EvenementController extends Controller
         return view('admin.evenements.form', [
             'evenement' => new Evenement()
         ]);
-
-
     }
 
     /**
@@ -37,12 +40,48 @@ class EvenementController extends Controller
     public function store( EvenementRequest $request)
     {
         // Evenement::create($request->validated());
-        dd($request);
+        $data = $request->validated();
+        $organisateur = implode(', ', $request->validated('organisateur'));
+        $sponsors = $request->validated('sponsors');
+        unset($data['sponsors'], $data['organisateur']);
+        $eventToBeSaved = $data;
+
+        $sponsorExist = Sponsor::where('nom', $sponsors[0])->exists();
+
+        // dd($request->validated(), $data, $organisateur, $sponsors, $eventToBeSaved, $sponsorExist);
+
+        
+        // dd(Hash::make('Kedd2004'));
+        $evenement = Evenement::create(array_merge($eventToBeSaved, [
+            // 'user_id' => Auth::user()->id,
+            'user_id' => 1,
+            'statut' => 'en attente'
+        ]));
+
+        $sponsorsOfEvent = [];
+
+        foreach ($sponsors as $sponsor) {
+            if (!Sponsor::where('nom', $sponsor)->exists()) {
+                $sponsorCreated = Sponsor::create(['nom' => $sponsor]);
+                array_push($sponsorsOfEvent, $sponsorCreated->id);
+            }
+        }
+
+        $evenement->sponsors()->sync($sponsorsOfEvent);
+
+
+        // dd($evenement,$sponsorsOfEvent, $evenement->sponsors);
+
         $image = $request->file('image');
 
         return redirect()
             ->route('evenements.index')
             ->with('success', "L'évènement a bien été ajouté");
+    }
+
+    public function setTicketType(Evenement $evenement, TicketTypeRequest $request) {
+        // dd($request->validated(), $evenement);
+        TicketType::create($request->validated());
     }
 
     /**

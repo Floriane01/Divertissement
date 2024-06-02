@@ -17,43 +17,47 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $this->call(class: RoleSeeder::class);
+        // $this->call(class: RoleSeeder::class);
 
-        $organisateurRole = Role::firstWhere('name', RoleEnum::ORGANISATEUR->value);
-
-
-        User::factory(count: 5)
-            ->create()
-            ->each(
-                fn (User $user) => $user->assignRole($organisateurRole),
-            );
-
-        User::factory()->create([
-            'name' => 'Super Admin',
-            'email' => 'admin@test.com',
-        ])->assignRole(Role::firstWhere('name', RoleEnum::SUPER_ADMIN->value));
+        // $organisateurRole = Role::firstWhere('name', RoleEnum::ORGANISATEUR->value);
 
 
-        $utilisateurRole = Role::where('name', RoleEnum::UTILISATEUR->value)->first();
+        // User::factory(count: 5)
+        //     ->create()
+        //     ->each(
+        //         fn (User $user) => $user->assignRole($organisateurRole),
+        //     );
+
+        // User::factory()->create([
+        //     'name' => 'Super Admin',
+        //     'email' => 'admin@test.com',
+        // ])->assignRole(Role::firstWhere('name', RoleEnum::SUPER_ADMIN->value));
 
 
-           User::factory(count: 10)
-                ->has(
-                    UtilisateurCard::factory(),
+        // $utilisateurRole = Role::where('name', RoleEnum::UTILISATEUR->value)->first();
 
-                )
 
-                ->create()
+        //    User::factory(count: 10)
+        //         ->has(
+        //             UtilisateurCard::factory(),
 
-                ->each(
-                    fn(User $user) => $user->assignRole($utilisateurRole),
-                );
+        //         )
+
+        //         ->create()
+
+        //         ->each(
+        //             fn(User $user) => $user->assignRole($utilisateurRole),
+        //         );
 
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'nom' => 'Divin',
+            'prenom' => 'Divin',
+            'email' => 'divindjk@gmail.com',
+            'password' => '$2y$12$U.ieKXuTzN8/RwqFj5i02u9qCRgcQpXj4jb.J4j.botSX0Oyg98VO',
+            'telephone' => '90909090',
+            'photo' => 'photo',
+        ]);
     }
 }
