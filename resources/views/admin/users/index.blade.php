@@ -8,7 +8,7 @@
     </div>
     <div>
         {{-- style="text-decoration: none; color:white; padding: 8px; background-color: blue; border-radius: 4px;" --}}
-        <a href="{{ route('categories.create') }}" class="btn btn-falcon-success btn-sm cursor-pointer">
+        <a href="{{ route('user.create') }}" class="btn btn-falcon-success btn-sm cursor-pointer">
             <span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span>
             <span class="ms-1">Nouveau</span>
         </a>
@@ -43,17 +43,17 @@
             <tr>
                 <td class="nom">{{ $user->nom }}</td>
                 <td class="nom">{{ $user->prenom }}</td>
-                <td class="nom">{{ $user->mail }}</td>
+                <td class="nom">{{ $user->email }}</td>
                 <td class="nom">{{ $user->telephone }}</td>
                 <td class="text-end">
                     <div>
-                        <a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-link p-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                        <a href="{{ route('user.edit', ['user' => $user->id]) }}" class="btn btn-link p-0" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
                             <span class="text-500 fas fa-edit"></span>
                         </a>
                         <button  class="btn btn-link p-0 ms-2" data-bs-placement="top" title="Delete" data-bs-toggle="modal" data-bs-target="#error-modal{{$user->id}}">
                             <span class="text-500 fas fa-trash-alt"></span>
                         </button>
-                        <form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="post" style="display: none" id="delete-form-{{$user->id}}">
+                        <form action="{{ route('user.destroy', ['user' => $user->id]) }}" method="post" style="display: none" id="delete-form-{{$user->id}}">
                             @csrf
                             @method('delete')
                         </form>

@@ -8,7 +8,7 @@
     </div>
     <div>
         {{-- style="text-decoration: none; color:white; padding: 8px; background-color: blue; border-radius: 4px;" --}}
-        <a href="{{ route('categories.create') }}" class="btn btn-falcon-success btn-sm cursor-pointer">
+        <a href="{{ route('tickettype.create') }}" class="btn btn-falcon-success btn-sm cursor-pointer">
             <span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span>
             <span class="ms-1">Nouveau</span>
         </a>

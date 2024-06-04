@@ -22,9 +22,39 @@
                     <div class="col-md-7 d-flex flex-center">
                     <div class="p-4 p-md-5 flex-grow-1">
                         <h3>Réinitialiser le mot de passe</h3>
-                        <form class="mt-3">
-                        <div class="mb-3"><label class="form-label" for="card-reset-password">Nouveau mot de passe</label><input class="form-control" type="password" id="card-reset-password" /></div>
-                        <div class="mb-3"><label class="form-label" for="card-reset-confirm-password">Confirmez mot de passe </label><input class="form-control" type="password" id="card-reset-confirm-password" /></div><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Définir le mot de passe</button>
+
+                        @if ($errors->any())
+                            <div>
+                                @foreach ($errors->all() as $error)
+                                    <span style="color: red;" > {{$error }} </span>
+                                @endforeach
+                            </div>
+                        @endif
+
+                        <form action="{{route('password.update')}}" method="POST" class="mt-3">
+                            @csrf
+                            @method('post')
+
+                            <div class="mb-3">
+                                <input type="hidden" class="form-control" id="token" name="token" value="{{$request->route('token')}}" aria-describedby="emailHelp">
+                              </div>
+
+                            <div class="mb-3">
+                              <label for="email" class="form-label">Email</label>
+                              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-4">
+                              <label for="password" class="form-label">Mot de passe</label>
+                              <input type="password" class="form-control" id="password" name="password">
+                            </div>
+                            <div class="mb-4">
+                                <label for="password_confirmation" class="form-label">Confirme mot de passe</label>
+                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                              </div>
+                            <br>
+                            <br>
+                            <button class="btn btn-primary" type="submit">Confirmer</button>
+
                         </form>
                     </div>
                     </div>

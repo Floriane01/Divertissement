@@ -7,7 +7,6 @@ use App\Http\Requests\UtilisateurStoreRequest;
 use App\Http\Requests\UtilisateurUpdateRequest;
 use App\Models\Role;
 use App\Models\User;
-use App\Models\Utilisateur;
 use Illuminate\Http\Request;
 
 class UtilisateurController extends Controller
@@ -17,8 +16,8 @@ class UtilisateurController extends Controller
      */
     public function index()
     {
-        $utilisateurs = User::all();
-        return view('admin.users.index', compact('utilisateurs'));
+        $users = User::all();
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -49,61 +48,47 @@ class UtilisateurController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(User $utilisateur)
+    public function show(User $user)
     {
-        $roles = Role::all();
-        return view('admin.users', compact("utilisateurs"), [
-            'roles' => $roles
+        // $roles = Role::all();
+        return view('admin.users', compact("users"), [
+            // 'roles' => $roles
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $utilisateur)
+    public function edit(User $user)
     {
-        $roles = Role::all();
+        // $roles = Role::all();
         return view('admin.users.form', [
-            'utilisateur' => $utilisateur,
-            'roles' => $roles,
+            'user' => $user,
+            // 'roles' => $roles,
         ]);
     }
-
-    // public function login(UtilisateurStoreRequest $request)
-    // {
-    //     $credentials = $request->validated();
-
-    //     if(Auth::attempt($credentials)) {
-    //         return redirect()->intended(route(''));
-    //     }
-    //     return to_route('')->withErrors(
-    //         [
-    //             'email' => 'Email Invalide'
-    //         ]
-    //     )->onlyInput('email');
-    // }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UtilisateurUpdateRequest $request, User $utilisateur)
+    public function update(UtilisateurUpdateRequest $request, User $user)
     {
-        $utilisateur->update($request->validated());
+        $user->update($request->validated());
 
         return redirect()
-            ->route('users.index')
+            ->route('user.index')
             ->with('success', "Vos informations ont été modifiés");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $utilisateur)
+    public function destroy(User $user)
     {
-        $utilisateur->delete();
+        $user->delete();
 
         return redirect()
-            ->route('users.index')
+            ->route('user.index')
             ->with('success', "L'utilsateur a été supprimé");
     }
 }

@@ -79,7 +79,7 @@
       <nav class="navbar navbar-standard navbar-expand-lg fixed-top navbar-dark" data-navbar-darken-on-scroll="data-navbar-darken-on-scroll">
         <div class="container"><a class="navbar-brand" href="../index-2.html"><span class="text-white dark__text-white">Events</span></a><button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse scrollbar" id="navbarStandard">
-            <ul class="navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
+            {{-- <ul class="navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">Dashboard</a>
                 <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                   <div class="bg-white dark__bg-1000 rounded-3 py-2"><a class="dropdown-item link-600 fw-medium" href="../index-2.html">Default</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/analytics.html">Analytics</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/crm.html">CRM</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/e-commerce.html">E commerce</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/lms.html">LMS<span class="badge rounded-pill ms-2 badge-subtle-success">New</span></a><a class="dropdown-item link-600 fw-medium" href="../dashboard/project-management.html">Management</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/saas.html">SaaS</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/support-desk.html">Support desk<span class="badge rounded-pill ms-2 badge-subtle-success">New</span></a></div>
@@ -232,16 +232,63 @@
                   <div class="bg-white dark__bg-1000 rounded-3 py-2"><a class="dropdown-item link-600 fw-medium" href="../documentation/getting-started.html">Getting started</a><a class="dropdown-item link-600 fw-medium" href="../documentation/customization/configuration.html">Configuration</a><a class="dropdown-item link-600 fw-medium" href="../documentation/customization/styling.html">Styling<span class="badge rounded-pill ms-2 badge-subtle-success">Updated</span></a><a class="dropdown-item link-600 fw-medium" href="../documentation/customization/dark-mode.html">Dark mode</a><a class="dropdown-item link-600 fw-medium" href="../documentation/customization/plugin.html">Plugin</a><a class="dropdown-item link-600 fw-medium" href="../documentation/faq.html">Faq</a><a class="dropdown-item link-600 fw-medium" href="../documentation/gulp.html">Gulp</a><a class="dropdown-item link-600 fw-medium" href="../documentation/design-file.html">Design file</a><a class="dropdown-item link-600 fw-medium" href="../changelog.html">Changelog</a></div>
                 </div>
               </li>
-            </ul>
+            </ul> --}}
+
+
             <ul class="navbar-nav ms-auto">
               <li class="nav-item d-flex align-items-center me-2">
-                <div class="dropdown theme-control-dropdown landing-drop"><a class="nav-link d-flex align-items-center dropdown-toggle fa-icon-wait pe-1" href="#" role="button" id="themeSwitchDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-none d-lg-block"><span class="fas fa-sun" data-theme-dropdown-toggle-icon="light"></span><span class="fas fa-moon" data-theme-dropdown-toggle-icon="dark"></span><span class="fas fa-adjust" data-theme-dropdown-toggle-icon="auto"></span></span><span class="d-lg-none">Switch theme</span></a>
+                <div class="dropdown theme-control-dropdown landing-drop"><a class="nav-link d-flex align-items-center dropdown-toggle fa-icon-wait pe-1" href="#" role="button" id="themeSwitchDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="d-none d-lg-block"><span class="fas fa-sun" data-theme-dropdown-toggle-icon="light"></span><span class="fas fa-moon" data-theme-dropdown-toggle-icon="dark"></span><span class="fas fa-adjust" data-theme-dropdown-toggle-icon="auto"></span></span><span class="d-lg-none">Changer de thème</span></a>
                   <div class="dropdown-menu dropdown-menu-end dropdown-caret border py-0 mt-1" aria-labelledby="themeSwitchDropdown">
-                    <div class="bg-white dark__bg-1000 rounded-2 py-2"><button class="dropdown-item link-600 d-flex align-items-center gap-2" type="button" value="light" data-theme-control="theme"><span class="fas fa-sun"></span>Light<span class="fas fa-check dropdown-check-icon ms-auto text-600"></span></button><button class="dropdown-item link-600 d-flex align-items-center gap-2" type="button" value="dark" data-theme-control="theme"><span class="fas fa-moon" data-fa-transform=""></span>Dark<span class="fas fa-check dropdown-check-icon ms-auto text-600"></span></button><button class="dropdown-item link-600 d-flex align-items-center gap-2" type="button" value="auto" data-theme-control="theme"><span class="fas fa-adjust" data-fa-transform=""></span>Auto<span class="fas fa-check dropdown-check-icon ms-auto text-600"></span></button></div>
+                    <div class="bg-white dark__bg-1000 rounded-2 py-2"><button class="dropdown-item link-600 d-flex align-items-center gap-2" type="button" value="light" data-theme-control="theme"><span class="fas fa-sun"></span>Clair<span class="fas fa-check dropdown-check-icon ms-auto text-600"></span></button><button class="dropdown-item link-600 d-flex align-items-center gap-2" type="button" value="dark" data-theme-control="theme"><span class="fas fa-moon" data-fa-transform=""></span>Sombre<span class="fas fa-check dropdown-check-icon ms-auto text-600"></span></button><button class="dropdown-item link-600 d-flex align-items-center gap-2" type="button" value="auto" data-theme-control="theme"><span class="fas fa-adjust" data-fa-transform=""></span>Auto<span class="fas fa-check dropdown-check-icon ms-auto text-600"></span></button></div>
                   </div>
                 </div>
               </li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownLogin" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+
+              <ul>
+                @auth
+                    <form action="{{ route('logout') }}" method="post" id="logout-form" style="display: none">
+                        @csrf
+                    </form>
+                @endauth
+            </ul>
+
+            <li class="nav-item d-flex align-items-center me-2">
+                <div class="dropdown theme-control-dropdown landing-drop">
+                    <a class="nav-link d-flex align-items-center dropdown-toggle fa-icon-wait pe-1" href="#" role="button" id="themeSwitchDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="d-none d-lg-block">
+                            <span class="fas fa-person" data-theme-dropdown-toggle-icon="light"></span>
+                            <span class="fas fa-person" data-theme-dropdown-toggle-icon="dark"></span>
+                            <span class="fas fa-person" data-theme-dropdown-toggle-icon="auto"></span>
+                        </span>
+                        <span class="d-lg-none">Paramètres</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-caret border py-0 mt-1" aria-labelledby="themeSwitchDropdown">
+                        <div class="bg-white dark__bg-1000 rounded-2 py-2">
+                            <button class="dropdown-item link-600 d-flex align-items-center gap-2" type="button" value="light">
+                                <span class="fas fa-person"></span>
+                                Se connecter
+                                <span class="fas fa-check dropdown-check-icon ms-auto text-600"></span>
+                            </button>
+
+                            <button class="dropdown-item link-600 d-flex align-items-center gap-2" type="button" value="dark">
+                                <span class="fas fa-person"></span>
+                                S'inscrire
+                                <span class="fas fa-check dropdown-check-icon ms-auto text-600"></span>
+                            </button>
+
+                            <button class="dropdown-item link-600 d-flex align-items-center gap-2" type="button" value="auto" onclick="document.getElementById('logout-form').submit();">
+                                <span class="fas fa-person"></span>
+                                Se déconnecter
+                                <span class="fas fa-check dropdown-check-icon ms-auto text-600"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+
+
+              {{-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownLogin" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Se connecter</a>
                 <div class="dropdown-menu dropdown-caret dropdown-menu-end dropdown-menu-card" aria-labelledby="navbarDropdownLogin">
                   <div class="card shadow-none navbar-card-login">
                     <div class="card-body fs-10 p-4 fw-normal">
@@ -253,7 +300,7 @@
                           <p class="fs-10 text-600 mb-0">or <a href="authentication/simple/register.html">Create an account</a></p>
                         </div>
                       </div>
-                      <form>
+                      {{-- <form>
                         <div class="mb-3"><input class="form-control" type="email" placeholder="Email address" /></div>
                         <div class="mb-3"><input class="form-control" type="password" placeholder="Password" /></div>
                         <div class="row flex-between-center">
@@ -263,25 +310,25 @@
                           <div class="col-auto"><a class="fs-10" href="authentication/simple/forgot-password.html">Forgot Password?</a></div>
                         </div>
                         <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Log in</button></div>
-                      </form>
-                      <div class="position-relative mt-4">
+                      </form> --}}
+                      {{-- <div class="position-relative mt-4">
                         <hr />
                         <div class="divider-content-center">or log in with</div>
-                      </div>
-                      <div class="row g-2 mt-2">
+                      </div> --}}
+                      {{-- <div class="row g-2 mt-2">
                         <div class="col-sm-6"><a class="btn btn-outline-google-plus btn-sm d-block w-100" href="#"><span class="fab fa-google-plus-g me-2" data-fa-transform="grow-8"></span> google</a></div>
                         <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="#"><span class="fab fa-facebook-square me-2" data-fa-transform="grow-8"></span> facebook</a></div>
-                      </div>
+                      </div> --}}
                     </div>
                   </div>
                 </div>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a></li>
+              {{-- </li> --}}
+              {{-- <li class="nav-item"><a class="nav-link" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a></li> --}}
             </ul>
           </div>
         </div>
       </nav>
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-body p-4">
@@ -314,7 +361,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
 
       <!-- ============================================--><!-- <section> begin ============================-->
       <section class="py-0 overflow-hidden" id="banner" data-bs-theme="light">

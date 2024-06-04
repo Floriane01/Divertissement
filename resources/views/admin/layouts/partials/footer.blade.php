@@ -1,6 +1,5 @@
     <!-- ===============================================--><!--    JavaScripts--><!-- ===============================================-->
     <script src={{asset("vendors/popper/popper.min.js")}}></script>
-    <script src="assets/js/flatpickr.js"></script>
     <script src={{asset("vendors/bootstrap/bootstrap.min.js")}}></script>
     <script src={{asset("vendors/anchorjs/anchor.min.js")}}></script>
     <script src={{asset("vendors/is/is.min.js")}}></script>

@@ -23,13 +23,13 @@
                 <h6 class="mb-0">Basic information</h6>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route($tickettype->exists ? 'tickettypes.update' : 'tickettypes.store', ['tickettype' => $ticketype->id]) }}">
+                <form method="POST" action="{{ route( $tickettype->exists ? 'tickettype.update' : 'tickettype.store', ['tickettype' => $tickettype->id]) }}">
                     @csrf
                     @method($tickettype->exists ? 'put' : 'post')
                     <div class="row gx-2">
                         <div class="col-12 mb-3">
                             <label class="form-label" for="product-name">Libelle:</label>
-                            <input class="form-control  @error('libelle') is-invalid @enderror" id="product-name" name="nom" autofocus type="text" value="{{$tickettype->exists ? $tickettype->libelle : ''}}" />
+                            <input class="form-control  @error('libelle') is-invalid @enderror" id="product-name" name="libelle" autofocus type="text" value="{{$tickettype->exists ? $tickettype->libelle : ''}}" />
                             @error('libelle')
                                 <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                             @enderror
@@ -37,7 +37,7 @@
 
                         <div class="col-12 mb-3">
                             <label class="form-label" for="product-name">Image:</label>
-                            <input class="form-control  @error('image') is-invalid @enderror" id="product-name" name="nom" autofocus type="text" value="{{$tickettype->exists ? $tickettype->image : ''}}" />
+                            <input class="form-control  @error('image') is-invalid @enderror" id="product-name" name="image" autofocus type="text" value="{{$tickettype->exists ? $tickettype->image : ''}}" />
                             @error('image')
                                 <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                             @enderror
@@ -45,7 +45,7 @@
 
                         <div class="col-12 mb-3">
                             <label class="form-label" for="product-name">Prix:</label>
-                            <input class="form-control  @error('prix') is-invalid @enderror" id="product-name" name="nom" autofocus type="text" value="{{$tickettype->exists ? $tickettype->prix : ''}}" />
+                            <input class="form-control  @error('prix') is-invalid @enderror" id="product-name" name="prix" autofocus type="text" value="{{$tickettype->exists ? $tickettype->prix : ''}}" />
                             @error('prix')
                                 <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                             @enderror
@@ -53,7 +53,7 @@
 
                         <div class="col-12 mb-3">
                             <label class="form-label" for="product-name">Mode Presence:</label>
-                            <input class="form-control  @error('mode_presence') is-invalid @enderror" id="product-name" name="nom" autofocus type="text" value="{{$tickettype->exists ? $tickettype->mode_presence : ''}}" />
+                            <input class="form-control  @error('mode_presence') is-invalid @enderror" id="product-name" name="mode_presence" autofocus type="text" value="{{$tickettype->exists ? $tickettype->mode_presence : ''}}" />
                             @error('mode_presence')
                                 <span style="color: red; font-size: 0.7rem">{{$message}}</span>
                             @enderror

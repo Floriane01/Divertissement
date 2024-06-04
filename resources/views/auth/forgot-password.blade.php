@@ -17,19 +17,39 @@
                         </div>
                     </div>
                     <div class="mt-3 mb-4 mt-md-4 mb-md-5" data-bs-theme="light">
-                        <p class="mb-0 mt-4 mt-md-5 fs-10 fw-semi-bold text-white opacity-75">Lire les <a class="text-decoration-underline text-white" href="#!">termes</a> et <a class="text-decoration-underline text-white" href="#!">conditions </a></p>
+                        {{-- <p class="mb-0 mt-4 mt-md-5 fs-10 fw-semi-bold text-white opacity-75">Lire les <a class="text-decoration-underline text-white" href="#!">termes</a> et <a class="text-decoration-underline text-white" href="#!">conditions </a></p> --}}
                     </div>
                     </div>
                     <div class="col-md-7 d-flex flex-center">
                     <div class="p-4 p-md-5 flex-grow-1">
                         <div class="text-center text-md-start">
                         <h4 class="mb-0"> Mot de passe oublié?</h4>
-                        <p class="mb-4">Entrez votre email et nous vous enverrons un lien de réinitialisation.</p>
+                        <br>
+                        {{-- <p class="mb-4">Entrez votre email et nous vous enverrons un lien de réinitialisation.</p> --}}
                         </div>
                         <div class="row justify-content-center">
                         <div class="col-sm-8 col-md">
-                            <form class="mb-3"><input class="form-control" type="email" placeholder="Email address" />
-                            {{-- <div class="mb-3"></div><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Envoyer le lien de réinitialisation</button> --}}
+
+                            @if  ($errors->any())
+                                <div>
+                                    @foreach ($errors->all() as $error)
+                                        <span style="color: red;"> {{ $error }} </span>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                            <form action="{{ route('password.request')}}" method="POST" class="mb-3">
+                                @csrf
+                                @method('post')
+                                
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                                <div class="mb-3">
+
+                                </div>
+                                <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">
+                                    Réinitialiser
+                                </button>
                             </form>
                             {{-- <a class="fs-10 text-600" href="#!"><span class="d-inline-block ms-1">&rarr;</span></a> --}}
                         </div>

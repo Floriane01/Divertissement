@@ -20,7 +20,7 @@
                       </div>
                       <div class="mt-3 mb-4 mt-md-4 mb-md-5" data-bs-theme="light">
                         <p class="text-white">Vous n'avez pas de compte?<br><a class="text-decoration-underline link-light" href="{{ route('register') }}">S'inscrire</a></p>
-                        <p class="mb-0 mt-4 mt-md-5 fs-10 fw-semi-bold text-white opacity-75">Lire les <a class="text-decoration-underline text-white" href="#!">termes</a> et <a class="text-decoration-underline text-white" href="#!">conditions </a></p>
+                        {{-- <p class="mb-0 mt-4 mt-md-5 fs-10 fw-semi-bold text-white opacity-75">Lire les <a class="text-decoration-underline text-white" href="#!">termes</a> et <a class="text-decoration-underline text-white" href="#!">conditions </a></p> --}}
                       </div>
                     </div>
                     <div class="col-md-7 d-flex flex-center">
@@ -30,7 +30,7 @@
                             <h3>Conexion</h3>
                           </div>
                         </div>
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('login') }}" id="login-form">
                           @csrf
                             <div class="mb-3">
                                 <label class="form-label" for="card-email">Email</label>

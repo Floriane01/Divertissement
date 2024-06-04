@@ -20,14 +20,18 @@ use Illuminate\Support\Facades\Route;
 
 $idRegex = '[0-9]+';
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware('auth');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->middleware('auth', 'verified');
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 
-})->middleware('auth');
+})->middleware('auth', 'verified');
+
+Route::get('/settings', function () {
+    return view('auth.settings');
+})->middleware('auth', 'verified');
 
 
 Route::prefix('admin')->group(function () {

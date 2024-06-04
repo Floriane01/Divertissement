@@ -69,7 +69,7 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3 col-sm-6">
-                                        <label class="form-label" for="card-confirm-password">Confirmer mot de passe</label>
+                                        <label class="form-label" for="card-confirm-password">Confirmer</label>
                                         <input class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" id="card-confirm-password" />
                                     </div>
                                 </div>
@@ -87,8 +87,8 @@
                                     </div>
 
                                     <div class="mb-3 col-sm-6">
-                                        <label for="form-label" for="card-telephone">Photo</label>
-                                        <input class="form-control @error('photo') is-invalid @enderror" type="text" name="telephone" value="{{ old('photo') }}" required autocomplete="photo" autofocus id="card-photo" />
+                                        <label for="form-label" for="card-photo">Photo</label>
+                                        <input class="form-control @error('photo') is-invalid @enderror" type="text" name="photo" value="{{ old('photo') }}" required autocomplete="photo" autofocus id="card-photo" />
                                         @error('photo')
                                             <span class="invalide-feedback" role="alert">
                                                 <strong>{{ $message}}</strong>
@@ -98,7 +98,7 @@
                                 </div>
 
 
-                                <div class="form-check"><input class="form-check-input" type="checkbox" id="card-register-checkbox" /><label class="form-label" for="card-register-checkbox">J'accepte les<a href="#!">termes </a> et <a class="white-space-nowrap" href="#!">conditions</a></label></div>
+                                {{-- <div class="form-check"><input class="form-check-input" type="checkbox" id="card-register-checkbox" /><label class="form-label" for="card-register-checkbox">J'accepte les<a href="#!">termes </a> et <a class="white-space-nowrap" href="#!">conditions</a></label></div> --}}
                                 <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">S'inscrire</button></div>
                             </form>
                             {{-- <div class="position-relative mt-4">
