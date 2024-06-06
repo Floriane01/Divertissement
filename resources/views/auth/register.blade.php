@@ -22,7 +22,10 @@
                         </div>
                         <div class="col-md-7 d-flex flex-center">
                         <div class="p-4 p-md-5 flex-grow-1">
-                            <h3>Inscription</h3>
+                            <h3>
+                                {{-- <i class="far fa-user"></i> --}}
+                                Inscription
+                            </h3>
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
 

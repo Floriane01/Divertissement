@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Enums\RoleEnum;
 use App\Models\Role;
+use App\Models\TypeRole;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Contracts\Permission;
@@ -16,19 +16,23 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
 
+        $userTypeRole = TypeRole::where('libelle', 'Utilisateur')->first();
+        $organisateurTypeRole = TypeRole::where('libelle', 'Organisateur')->first();
+        $adminTypeRole = TypeRole::where('libelle', 'Administrateur')->first();
 
-        foreach (RoleEnum::cases() as $roleEnum) {
-            Role::create([
-                'name' =>$roleEnum->value,
-            ]);
-        }
+        Role::create([
+            'name' => 'Utilisateur',
+            'type_role_id' => $userTypeRole->id
+        ]);
 
+        Role::create([
+            'name' => 'Organisateur',
+            'type_role_id' => $organisateurTypeRole->id
+        ]);
 
-        (Permission::create([
-
-            'name' => 'utilisateur-cards.*'
-
-        ]))->assignRole(Role::where('name', RoleEnum::ORGANISATEUR->value));
-
+        Role::create([
+            'name' => 'Administrateur',
+            'type_role_id' => $adminTypeRole->id
+        ]);
     }
 }

@@ -33,6 +33,10 @@ Route::get('/settings', function () {
     return view('auth.settings');
 })->middleware('auth', 'verified');
 
+Route::get('/dashboard', function () {
+    return view ('admin.dashboard-admin');
+});
+
 
 Route::prefix('admin')->group(function () {
 

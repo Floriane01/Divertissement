@@ -27,7 +27,10 @@
                       <div class="p-4 p-md-5 flex-grow-1">
                         <div class="row flex-between-center">
                           <div class="col-auto">
-                            <h3>Conexion</h3>
+                            <h3>
+                                {{-- <i class="far fa-user"></i> --}}
+                                Connexion
+                            </h3>
                           </div>
                         </div>
                         <form method="POST" action="{{ route('login') }}" id="login-form">
