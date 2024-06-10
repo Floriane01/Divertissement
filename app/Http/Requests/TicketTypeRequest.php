@@ -23,7 +23,7 @@ class TicketTypeRequest extends FormRequest
     {
         return [
             'option' => ['required', 'string'],
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:50000',
             'prix' => ['required', 'integer'],
             'evenement_id' => ['required', 'exists:evenements,id', 'integer'],
             'mode_presence' => ['nullable', 'string'],

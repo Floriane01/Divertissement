@@ -23,7 +23,7 @@ class SponsorRequest extends FormRequest
     {
         return [
             'nom' => ['required', 'sting'],
-            'pourcentage' => ['required', 'integer']
+            // 'pourcentage' => ['required', 'integer']
         ];
     }
 }

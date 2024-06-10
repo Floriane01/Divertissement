@@ -22,7 +22,8 @@ return new class extends Migration
             // $table->integer('prix');
             $table->time('heure_debut');
             $table->string('description');
-            $table->string('image')->nullable();
+            $table->string('organisateur');
+            $table->string('cover')->nullable();
             $table->string('statut')->nullable();
             $table->date('date_limite');
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();

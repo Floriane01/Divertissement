@@ -21,6 +21,13 @@ class EvenementRequest extends FormRequest
      */
     public function rules(): array
     {
+        if(request()->routeIs('evenements.store')){
+            $coverRule = 'required|mimes:jpeg|max:500000';
+        }elseif(request()->routeIs('evenements.update')){
+            $coverRule = 'sometimes|image|max:500000';
+        }
+
+
         return [
             'nom' => ['required', 'string'],
             'theme' => ['nullable', 'string'],
@@ -30,7 +37,7 @@ class EvenementRequest extends FormRequest
             'lieu' => ['required', 'string'],
             'heure_debut' => ['required', 'date_format:H:i'],
             'description' => ['required', 'string'],
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cover' => $coverRule,
             'statut' => ['boolean'],
             'organisateur' => ['nullable', 'array'],
             'sponsors' => ['nullable', 'array']

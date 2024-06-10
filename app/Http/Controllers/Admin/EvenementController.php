@@ -12,6 +12,7 @@ use App\Models\TicketType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class EvenementController extends Controller
 {
@@ -29,8 +30,10 @@ class EvenementController extends Controller
      */
     public function create()
     {
+        $sponsors = Sponsor::all();
         return view('admin.evenements.form', [
-            'evenement' => new Evenement()
+            'evenement' => new Evenement(),
+            'sponsors' => $sponsors,
         ]);
     }
 
@@ -39,49 +42,64 @@ class EvenementController extends Controller
      */
     public function store( EvenementRequest $request)
     {
-        // Evenement::create($request->validated());
-        $data = $request->validated();
+        $data = $this->withImage(new Evenement(), $request);
         $organisateur = implode(', ', $request->validated('organisateur'));
         $sponsors = $request->validated('sponsors');
         unset($data['sponsors'], $data['organisateur']);
         $eventToBeSaved = $data;
 
-        $sponsorExist = Sponsor::where('nom', $sponsors[0])->exists();
-
-        // dd($request->validated(), $data, $organisateur, $sponsors, $eventToBeSaved, $sponsorExist);
-
-        
-        // dd(Hash::make('Kedd2004'));
         $evenement = Evenement::create(array_merge($eventToBeSaved, [
             // 'user_id' => Auth::user()->id,
             'user_id' => 1,
-            'statut' => 'en attente'
+            'statut' => 'en attente',
+            'organisateur' => $organisateur,
         ]));
 
         $sponsorsOfEvent = [];
 
         foreach ($sponsors as $sponsor) {
-            if (!Sponsor::where('nom', $sponsor)->exists()) {
-                $sponsorCreated = Sponsor::create(['nom' => $sponsor]);
+            if (!Sponsor::where('id', $sponsor)->exists()) {
+                $sponsorCreated = Sponsor::create(['id' => $sponsor]);
                 array_push($sponsorsOfEvent, $sponsorCreated->id);
+            } else {
+                array_push($sponsorsOfEvent, $sponsor);
             }
         }
 
         $evenement->sponsors()->sync($sponsorsOfEvent);
-
-
-        // dd($evenement,$sponsorsOfEvent, $evenement->sponsors);
-
-        $image = $request->file('image');
 
         return redirect()
             ->route('evenements.index')
             ->with('success', "L'évènement a bien été ajouté");
     }
 
+    private function withImage(Evenement $evenement, EvenementRequest $request): array 
+    {
+        $data = $request->validated();
+
+        if(array_key_exists('cover', $data)) {
+            $eventCover = $data['cover'];
+            $data['cover'] = $eventCover->storeAs('eventCover', $request->file('cover')->getClientOriginalName(), 'public');
+            $eventCoverPath = 'public/' . $evenement->image;
+            if(Storage::exists($eventCoverPath)) Storage::delete('public/' . $evenement->image);
+        }
+        return $data;
+    }
+
     public function setTicketType(Evenement $evenement, TicketTypeRequest $request) {
         // dd($request->validated(), $evenement);
-        TicketType::create($request->validated());
+
+        $data = $request->validated();
+
+        if(array_key_exists('image', $data)) {
+            $ticketImage = $data['image'];
+            $data['image'] = $ticketImage->storeAs('tickets', $request->file('image')->getClientOriginalName(), 'public');
+            $ticketImagePath = 'public/' . $evenement->image;
+            if(Storage::exists($ticketImagePath)) Storage::delete('public/' . $evenement->image);
+        }
+        TicketType::create($data);
+
+        return redirect()->route('evenements.index')->with('success', 'L\'option de ticket à été bien créée');
     }
 
     /**

@@ -23,6 +23,12 @@
     <script src="../assets/js/config.js"></script>
     <script src="../vendors/simplebar/simplebar.min.js"></script>
 
+
+    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
+    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+
+    {{-- <link href="vendors/dropzone/dropzone.min.css" rel="stylesheet" /> --}}
+
     <!-- ===============================================--><!--    Stylesheets--><!-- ===============================================-->
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
@@ -31,6 +37,7 @@
     <link href="../assets/css/theme.min.css" rel="stylesheet" id="style-default">
     <link href="../assets/css/user-rtl.min.css" rel="stylesheet" id="user-style-rtl">
     <link href="../assets/css/user.min.css" rel="stylesheet" id="user-style-default">
+    <link href={{asset("vendors/dropzone/dropzone.min.css")}} rel="stylesheet" />
     <script>
       var isRTL = JSON.parse(localStorage.getItem('isRTL'));
       if (isRTL) {
