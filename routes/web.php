@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\EvenementController;
 use App\Http\Controllers\Admin\TicketController;
 use App\Http\Controllers\Admin\TicketTypeController;
 use App\Http\Controllers\Admin\UtilisateurController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,5 +63,17 @@ Route::post('ticket-type/{evenement}', [EvenementController::class, 'setTicketTy
 //         "posts" => PostController::class,
 //     ]);
 // });
+
+Route::prefix('user')->group(function () {
+
+    Route::resources([
+        "evenement" => UserController::class,
+    ]);
+
+});
+
+Route::get('/detail', function () {
+    return view('user.evenement.show');
+});
 
 

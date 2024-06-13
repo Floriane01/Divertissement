@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Enums\RoleEnum;
+use App\Models\Evenement;
 use App\Models\Role;
 use App\Models\Sponsor;
 use App\Models\User;
@@ -70,5 +71,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Sponsor::factory()->count(4)->create();
+
     }
 }
