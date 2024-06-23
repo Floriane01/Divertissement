@@ -37,7 +37,7 @@ class TicketController extends Controller
         Ticket::create($request->validated());
 
         return redirect()
-            ->route('tickets.index')
+            ->route('admin.tickets.index')
             ->with('success', "Le ticket a bien été ajouté");
     }
 
@@ -67,7 +67,7 @@ class TicketController extends Controller
         $ticket->update($request->validated());
 
         return redirect()
-            ->route('tickets.index')
+            ->route('admin.tickets.index')
             ->with('success', "Le ticket a bien été modifié");
     }
 
@@ -79,7 +79,7 @@ class TicketController extends Controller
         $ticket->delete();
 
         return redirect()
-            ->route('tickets.index')
+            ->route('admin.tickets.index')
             ->with('success', "Le ticket a bien été supprimé");
     }
 

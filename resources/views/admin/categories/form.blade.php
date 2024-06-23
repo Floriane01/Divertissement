@@ -23,7 +23,7 @@
                 <h6 class="mb-0">Basic information</h6>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route($categorie->exists ? 'categorie.update' : 'categorie.store', ['categorie' => $categorie->id]) }}">
+                <form method="POST" action="{{ route($categorie->exists ? 'admin.categorie.update' : 'admin.categorie.store', ['categorie' => $categorie->id]) }}">
                     @csrf
                     @method($categorie->exists ? 'put' : 'post')
                     <div class="row gx-2">

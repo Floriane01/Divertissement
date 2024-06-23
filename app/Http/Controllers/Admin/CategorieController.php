@@ -36,7 +36,7 @@ class CategorieController extends Controller
         Categorie::create($request->validated());
 
         return redirect()
-            ->route('categorie.index')
+            ->route('admin.categorie.index')
             ->with('success', "Le type d'évènement a bien été ajouté");
     }
 
@@ -66,7 +66,7 @@ class CategorieController extends Controller
     {
         $categorie->update($request->validated());
         return redirect()
-            ->route('categorie.index')
+            ->route('admin.categorie.index')
             ->with('success', "Le type d'évènement a été modifié");
     }
 
@@ -78,7 +78,7 @@ class CategorieController extends Controller
         $categorie->delete();
 
         return redirect()
-            ->route('categorie.index')
+            ->route('admin.categorie.index')
             ->with('success', "Le type d'évènement a été supprimé");
     }
 }

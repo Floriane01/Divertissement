@@ -40,7 +40,7 @@ class EvenementController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store( EvenementRequest $request)
+    public function store(EvenementRequest $request)
     {
         $data = $this->withImage(new Evenement(), $request);
         $organisateur = implode(', ', $request->validated('organisateur'));
@@ -49,8 +49,8 @@ class EvenementController extends Controller
         $eventToBeSaved = $data;
 
         $evenement = Evenement::create(array_merge($eventToBeSaved, [
-            // 'user_id' => Auth::user()->id,
-            'user_id' => 1,
+            'user_id' => Auth::user()->id,
+            // 'user_id' => 1,
             'statut' => 'en attente',
             'organisateur' => $organisateur,
         ]));
@@ -69,37 +69,38 @@ class EvenementController extends Controller
         $evenement->sponsors()->sync($sponsorsOfEvent);
 
         return redirect()
-            ->route('evenements.index')
+            ->route('admin.evenements.index')
             ->with('success', "L'évènement a bien été ajouté");
     }
 
-    private function withImage(Evenement $evenement, EvenementRequest $request): array 
+    private function withImage(Evenement $evenement, EvenementRequest $request): array
     {
         $data = $request->validated();
 
-        if(array_key_exists('cover', $data)) {
+        if (array_key_exists('cover', $data)) {
             $eventCover = $data['cover'];
             $data['cover'] = $eventCover->storeAs('eventCover', $request->file('cover')->getClientOriginalName(), 'public');
             $eventCoverPath = 'public/' . $evenement->image;
-            if(Storage::exists($eventCoverPath)) Storage::delete('public/' . $evenement->image);
+            if (Storage::exists($eventCoverPath)) Storage::delete('public/' . $evenement->image);
         }
         return $data;
     }
 
-    public function setTicketType(Evenement $evenement, TicketTypeRequest $request) {
+    public function setTicketType(Evenement $evenement, TicketTypeRequest $request)
+    {
         // dd($request->validated(), $evenement);
 
         $data = $request->validated();
 
-        if(array_key_exists('image', $data)) {
+        if (array_key_exists('image', $data)) {
             $ticketImage = $data['image'];
             $data['image'] = $ticketImage->storeAs('tickets', $request->file('image')->getClientOriginalName(), 'public');
             $ticketImagePath = 'public/' . $evenement->image;
-            if(Storage::exists($ticketImagePath)) Storage::delete('public/' . $evenement->image);
+            if (Storage::exists($ticketImagePath)) Storage::delete('public/' . $evenement->image);
         }
         TicketType::create($data);
 
-        return redirect()->route('evenements.index')->with('success', 'L\'option de ticket à été bien créée');
+        return redirect()->route('admin.evenements.index')->with('success', 'L\'option de ticket à été bien créée');
     }
 
     /**
@@ -131,7 +132,7 @@ class EvenementController extends Controller
         $evenement->update($request->validated());
 
         return redirect()
-            ->route('evenements.index')
+            ->route('admin.evenements.index')
             ->with('success', "L'évènement a bien été modifié");
     }
 
@@ -143,26 +144,7 @@ class EvenementController extends Controller
         $evenement->delete();
 
         return redirect()
-            ->route('evenements.index')
+            ->route('admin.evenements.index')
             ->with('success', "L'évènement a bien été supprimé");
     }
-
-    // public function soumettreEvenement(EvenementRequest $request)
-    // {
-
-    //     $evenement = Evenement::create($request->validated());
-
-    //     // Maintenant je pense qu'à ce niveau il me faut un code pour gérer le paiement de la comission hein maintenant reste à savoir comment je vais gérer ça
-
-
-    //     $$notification = Notification::create([
-    //         'message' => 'Nouvel événement soumis : ' . $evenement->titre
-    //     ]);
-
-
-    //     return redirect()
-    //         ->route()
-    //         ->with('success', 'Événement soumis avec succès !');
-    // }
-
 }
