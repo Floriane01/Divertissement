@@ -7,3 +7,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* *::-webkit-scrollbar {
+  /* display: none;
+} */
+
+
+*::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d6f260;
+  height: 30px;
+  border-radius: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #d5f2600d;
+}
