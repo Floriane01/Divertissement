@@ -21,9 +21,9 @@ class EvenementRequest extends FormRequest
      */
     public function rules(): array
     {
-        if(request()->routeIs('evenements.store')){
+        if(request()->routeIs('admin.evenements.store')){
             $coverRule = 'required|mimes:jpeg|max:500000';
-        }elseif(request()->routeIs('evenements.update')){
+        }elseif(request()->routeIs('admin.evenements.update')){
             $coverRule = 'sometimes|image|max:500000';
         }
 

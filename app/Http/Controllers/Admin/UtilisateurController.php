@@ -76,7 +76,7 @@ class UtilisateurController extends Controller
         $user->update($request->validated());
 
         return redirect()
-            ->route('user.index')
+            ->route('admin.user.index')
             ->with('success', "Vos informations ont été modifiés");
     }
 
@@ -88,7 +88,7 @@ class UtilisateurController extends Controller
         $user->delete();
 
         return redirect()
-            ->route('user.index')
+            ->route('admin.user.index')
             ->with('success', "L'utilsateur a été supprimé");
     }
 }

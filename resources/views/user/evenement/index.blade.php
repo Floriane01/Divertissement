@@ -26,7 +26,7 @@
                         </div>
                         <div class="flex-1 position-relative ps-3">
                             <h6 class="fs-9 mb-0">
-                                <a href="{{ route('user.events.show', $event->id) }}">
+                                <a href="{{ route('evenement.show', $event->id) }}">
                                     {{ $event->nom }}
                                 </a>
                             </h6>

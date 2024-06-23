@@ -2,13 +2,13 @@
 
 @section('content')
 
-<div class="d-flex align-items-center justify-content-between my-3 bg-white rounded" style="padding: 10px;">
+<div class="d-flex align-items-center justify-content-between my-3 rounded" style="padding: 10px;">
     <div>
         Liste des évènements
     </div>
     <div>
         {{-- style="text-decoration: none; color:white; padding: 8px; background-color: blue; border-radius: 4px;" --}}
-        <a href="{{ route('evenements.create') }}" class="btn btn-falcon-success btn-sm cursor-pointer">
+        <a href="{{ route('admin.evenements.create') }}" class="btn btn-falcon-success btn-sm cursor-pointer">
             <span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span>
             <span class="ms-1">Nouveau</span>
         </a>
@@ -27,8 +27,8 @@
 </div>
 @endif
 
-<div class="container bg-white p-2">
-    <div id="evenementsTable" data-list='{"valueNames":["nom"],"page":20,"pagination":true}'>
+<div class="card p-2">
+    <div id="tableExample3" data-list='{"valueNames":["nom"],"page":20,"pagination":true}'>
         <div class="row justify-content-end g-0">
             <div class="col-auto col-sm-5 mb-3">
                 <form>
@@ -113,7 +113,7 @@
                                         <div class="dropdown-divider"></div>
                                     </div>
                                 </div>
-                                <a href="{{ route('evenements.edit', ['evenement' => $evenement->id]) }}"
+                                <a href="{{ route('admin.evenements.edit', ['evenement' => $evenement->id]) }}"
                                     class="btn btn-link p-0" type="button" data-bs-toggle="tooltip"
                                     data-bs-placement="top" title="Edit">
                                     <span class="text-500 fas fa-edit">
@@ -124,7 +124,7 @@
                                     data-bs-toggle="modal" data-bs-target="#error-modal{{ $evenement->id }}">
                                     <span class="text-500 fas fa-trash-alt"></span>
                                 </button>
-                                <form action="{{ route('evenements.destroy', ['evenement' => $evenement->id]) }}"
+                                <form action="{{ route('admin.evenements.destroy', ['evenement' => $evenement->id]) }}"
                                     method="post" style="display: none" id="delete-form-{{ $evenement->id }}">
                                     @csrf
                                     @method('delete')

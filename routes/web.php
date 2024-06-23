@@ -21,25 +21,30 @@ use Illuminate\Support\Facades\Route;
 
 $idRegex = '[0-9]+';
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->middleware('auth', 'verified');
-
 Route::get('/', function () {
     return view('home');
+});
+// ->middleware('auth', 'verified');
 
-})->middleware('auth', 'verified');
+
+Route::get('/flo', function() {
+    return view();
+});
+
+
+
+
 
 Route::get('/settings', function () {
     return view('auth.settings');
 })->middleware('auth', 'verified');
 
-Route::get('/dashboard', function () {
-    return view ('admin.dashboard-admin');
+Route::get('/admin', function () {
+    return view('admin.dashboard-admin');
 });
 
-Route::prefix('admin')->group(function () {
 
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resources([
         "evenements" => EvenementController::class,
         "categorie" => CategorieController::class,
@@ -48,27 +53,16 @@ Route::prefix('admin')->group(function () {
         "user" => UtilisateurController::class,
         // "dashboard" => AdminController::class,
     ]);
+    Route::get('/event-creation', [EvenementController::class, 'store'])->name('event.creation');
 });
 
 Route::post('ticket-type/{evenement}', [EvenementController::class, 'setTicketType'])->name('setTicketType')
-->where([
-    'transfert' => $idRegex
-]);
-
-// Route::prefix('organisateur')->group(function () {
-//     Route::resources([
-//         "events" => EventController::class,
-//         "sponsors" => SponsorController::class,
-//         "posts" => PostController::class,
-//     ]);
-// });
-
-Route::prefix('user')->group(function () {
-
-    Route::resources([
-        "evenement" => UserController::class,
+    ->where([
+        'transfert' => $idRegex
     ]);
 
+Route::group([['middleware' => ['auth'], 'as' => 'user.']], function () {
+    Route::resources(["evenement" => UserController::class,]);
 });
 
 Route::get('/detail', function () {
@@ -76,3 +70,6 @@ Route::get('/detail', function () {
 });
 
 
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+
+});

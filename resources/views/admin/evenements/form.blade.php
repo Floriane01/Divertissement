@@ -22,7 +22,7 @@
     </label>
 </div> --}}
 <form method="POST"
-    action="{{ route($evenement->exists ? 'evenements.update' : 'evenements.store', ['evenement' => $evenement->id]) }}"
+    action="{{ route($evenement->exists ? 'admin.evenements.update' : 'admin.evenements.store', ['evenement' => $evenement->id]) }}"
     enctype="multipart/form-data" class="dropzone" id="event-form">
     @csrf
     @method($evenement->exists ? 'put' : 'post')

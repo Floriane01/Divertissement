@@ -21,7 +21,7 @@ class AdminController extends Controller
 
 
         return redirect()
-            ->route('evenements.index')
+            ->route('admin.evenements.index')
             ->with('success', 'Événement validé avec succès !');
     }
 

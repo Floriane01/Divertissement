@@ -1,0 +1,20 @@
+.ts-control {
+  background: transparent;
+  border-color: transparent;
+  color: white;
+}
+
+.ts-control input {
+  background: transparent;
+  border-color: transparent;
+  /* color: white; */
+  color: var(--falcon-gray-900);
+  background-color: var(--falcon-quaternary-bg);
+  background-clip: padding-box;
+}
+
+.ts-control .item {
+  border-radius: 5px;
+  color: var(--falcon-gray-900);
+  background-color: var(--falcon-quaternary-bg);
+}
