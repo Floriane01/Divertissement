@@ -26,6 +26,15 @@ Route::get('/', function () {
 });
 // ->middleware('auth', 'verified');
 
+
+Route::get('/flo', function() {
+    return view();
+});
+
+
+
+
+
 Route::get('/settings', function () {
     return view('auth.settings');
 })->middleware('auth', 'verified');
