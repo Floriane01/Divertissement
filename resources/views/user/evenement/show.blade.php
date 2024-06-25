@@ -2,195 +2,196 @@
 
 @section('content')
 
-<div class="card mb-3">
-    <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);"></div><!--/.bg-holder-->
-    <div class="card-body position-relative">
-      <div class="row">
-        <div class="col-lg-8">
-          <h3>Show</h3>
-          <a class="btn btn-link btn-sm ps-0 mt-2" href="https://getbootstrap.com/docs/5.3/components/accordion" target="_blank">
-            Photo de l'évènement
-            <span class="fas fa-chevron-right ms-1 fs-11">
-
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
+<div class="h-[15vh] text-5xl font-semibold w-full pl-20 text-white text-left flex items-center">
+    Event Discovery
 </div>
 
-{{-- <div class="card">
-    <div class="card-header">
-        <div class="row flex-between-end">
-            <div class="col-auto align-self-center">
-                <h5 class="mb-0" data-anchor="data-anchor">Thème de l'évènement</h5>
-                <p class="mb-0 pt-1 mt-2">
+<div class="flex flex-col">
+    <div class="px-4 sm:px-8 md:px-16 lg:px-28 mb-8 lg:ml-0 md:ml-0 ml-0">
+        <div class="flex flex-col gap-6 lg:flex-row lg:gap-0 lg:rounded-3xl overflow-hidden lg:w-full">
+            <div class="w-full lg:h-[450px]">
+                <img src="{{ asset('image/img5.jpeg')}}" alt="" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
 
+    <div class="flex flex-col lg:flex-row px-4 xl:px-28 lg:px-20 lg:space-x-8 mb-8 lg:ml-0 md:ml-0">
+        <div class="w-full lg:w-[70%]">
 
+            <div class="flex flex-col gap-6 mb-8">
+                <div class="text-2xl font-semibold text-white">
+                    About the event
+                </div>
+                <p class="text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
+                </p>
+                <p class="text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
                 </p>
             </div>
 
-            <div class="col-auto ms-auto">
-
+            <div class="flex flex-col gap-6 mb-8">
+                <div class="text-2xl font-semibold text-white">
+                    Gallery
+                </div>
             </div>
 
+            <div class="flex flex-col gap-6 lg:flex-row-reverse lg:gap-0 lg:rounded-3xl overflow-hidden mb-8">
+                <div class="h-[250px] w-full">
+                    <img src="{{ asset('image/img2.jpeg')}}" alt="" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+
+            <div class="flex flex-col gap-6 mb-8">
+                <div class="text-2xl font-semibold text-white">
+                    Date & Time
+                </div>
+                <span class="text-sm text-slate-50/70 font-semibold mb-2">13 mars 2025</span>
+                <p class="text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-6 mb-8">
+                <div class="text-2xl font-semibold text-white">
+                    Localisation
+                </div>
+                <span class="text-sm text-slate-50/70 font-semibold mb-2">Cotonou</span>
+                <p class="text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-6 mb-8">
+                <div class="text-2xl font-semibold text-white">
+                    Special Guests
+                </div>
+                <p class="text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-6 mb-8">
+                <div class="text-2xl font-semibold text-white">
+                    Amenities
+                </div>
+                <p class="text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-6 mb-8">
+                <div class="text-2xl font-semibold text-white">
+                    Contact Information
+                </div>
+                <p class="text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-6 mb-8">
+                <div class="text-2xl font-semibold text-white">
+                    Additional Notes
+                </div>
+                <p class="text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
+                </p>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-auto lg:ml-auto">
+
+
+            <div class="flex flex-col rounded-3xl bg-[#161616] overflow-hidden mb-8 w-full lg:w-[350px]">
+                <div class="bg-[#e63fec] w-full h-10 flex justify-between items-center px-12">
+                    <div class="text-black space-y-1">
+                        <p class="font-bold text-base">Ticket Price</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex flex-col items-center space-x-2 px-3 py-8 relative">
+                        <div class="font-semibold inline-flex items-center px-4 py-0.5 mb-5 rounded-full border-black w-auto bg-transparent">
+                            <span class="text-white/80">Free Entry</span>
+                        </div>
+                        <div class="font-semibold inline-flex items-center px-4 py-0.5 mb-5 rounded-full border-black w-auto bg-transparent bg-yellow-300">
+                            <span class="text-black/80">Book Tickets</span>
+                        </div>
+                        <div class="font-semibold inline-flex items-center px-4 py-0.5 mb-5 rounded-full border-black w-auto bg-transparent bg-gray-400">
+                            <span class="text-black/80">Buy as a gift</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col rounded-3xl bg-[#161616] overflow-hidden mb-8 w-full lg:w-[350px] p-4">
+                <div class="w-full flex items-center justify-between bg-[#161616] p-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="image/img2.jpeg" alt="Logo" class="w-10 h-10 rounded-full">
+                        <div>
+                            <h3 class="text-white font-bold">Blue Moon Events</h3>
+                            <div class="flex items-center space-x-1">
+                                <span class="text-yellow-400">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <span class="text-gray-400 text-sm">4.8 (189 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="flex flex-col space-y-2 mb-4">
+                        <i data-lucide="check-circle" class="text-green-400"></i>
+                        <span class="text-white">Free Cancellation</span>
+                        <p class="text-gray-400 text-sm">Cancel up to 24 hours in advance to receive a full refund</p>
+                    </div>
+                    <div class="flex flex-col space-y-2 mb-4">
+                        <i data-lucide="file-text" class="text-blue-400"></i>
+                        <span class="text-white">Free E - Tickets</span>
+                        <p class="text-gray-400 text-sm">This event offers free, no-hassle, self-print or e-tickets</p>
+                    </div>
+                    <div class="flex flex-col space-y-2 mb-4">
+                        <i data-lucide="gift" class="text-pink-400"></i>
+                        <span class="text-white">Buy as a Gift</span>
+                        <p class="text-gray-400 text-sm">This event is available as a branded gift e-voucher</p>
+                    </div>
+                    <div class="flex flex-col space-y-2 mb-4">
+                        <i data-lucide="shield" class="text-purple-400"></i>
+                        <span class="text-white">Guarantee</span>
+                        <p class="text-gray-400 text-sm">100% secure booking process guaranteed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-2xl font-semibold text-white mb-4">
+                Event Location
+            </div>
+
+            <div class="flex flex-col rounded-3xl bg-[#161616] overflow-hidden mb-8 w-full lg:w-[350px] p-4">
+                <div class="w-full flex items-center justify-between bg-[#161616] p-4">
+                    <!-- Map or location content can be added here -->
+                </div>
+            </div>
+
+            <div class="text-2xl font-semibold text-white mb-4">
+                Share with Friends
+            </div>
+
+            <div class="w-full flex items-center justify-between  p-4">
+                <i data-lucide="twitter" class="w-10 h-10 rounded-full bg-white"> </i>
+                <i data-lucide="facebook" class="w-10 h-10 rounded-full bg-white"> </i>
+                <i data-lucide="instagram" class="w-10 h-10 rounded-full bg-white"> </i>
+                <i data-lucide="utility-pole" class="w-10 h-10 rounded-full bg-white"> </i>
+            </div>
         </div>
     </div>
-</div> --}}
 
-
-<div class="row g-0">
-      <div class="card mb-3">
-        <div class="card-header">
-          <div class="row flex-between-end">
-            <div class="col-auto align-self-center">
-              <h5 class="mb-0" data-anchor="data-anchor">For The Night</h5>
-            </div>
-            <div class="col-auto ms-auto">
-              <div class="nav nav-pills nav-pills-falcon flex-grow-1" role="tablist">
-                <button class="btn btn-sm active" data-bs-toggle="pill" data-bs-target="#dom-5ee6a121-c3e5-4a1d-a018-c225a706937c" type="button" role="tab" aria-controls="dom-5ee6a121-c3e5-4a1d-a018-c225a706937c" aria-selected="true" id="tab-dom-5ee6a121-c3e5-4a1d-a018-c225a706937c">
-                    Mettre de côté
-                </button>
-            </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-body bg-body-tertiary">
-            <div class="tab-content">
-
-                <div class="tab-pane preview-tab-pane active" role="tabpanel" aria-labelledby="tab-dom-5ee6a121-c3e5-4a1d-a018-c225a706937c" id="dom-5ee6a121-c3e5-4a1d-a018-c225a706937c">
-
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="detail-tab" data-bs-toggle="tab" href="#tab-detail" role="tab" aria-cotrols="tab-detail" aria-selected="true">
-                                    Détails
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="post-tab" data-bs-toggle="tab" href="#tab-post" role="tab" aria-controls="tab-post" aria-selected="false">
-                                    Posts
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="ticket-tab" data-bs-toggle="tab" href="#tab-ticket" role="tab" aria-controls="tab-ticket" aria-selected="false">
-                                    Réservation de Tickets
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="avis-tab" data-bs-toggle="tab" href="#tab-avis" role="tab" aria-controls="tab-avis" aria-selected="false">
-                                    Emettre des avis
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="maps-tab" data-bs-toggle="tab" href="#tab-maps" role="tab" aria-controls="tab-maps" aria-selected="false">
-                                    Localisation Maps
-                                </a>
-                            </li>
-                    </ul>
-
-                    <div class="tab-content border border-top-0 p-3" id="myTabContent">
-
-                    <div class="tab-content border border-top-0 p-3" id="myTabContent">
-                        <div class="tab-pane fade show active" id="tab-detail" role="tabpanel" aria-labelledby="detail-tab">
-                            <div class="col-sm-6 col-lg-12">
-                                <div class="card position-relative rounded-4">
-                                  <div class="bg-holder bg-card rounded-4" style="background-image:url(assets/img/icons/spot-illustrations/corner-2.png);"></div><!--/.bg-holder-->
-                                  <div class="card-body p-3 pt-5 pt-xxl-4">
-                                      <img class="mb-3" src="assets/img/icons/chip.png" alt="" width="30" />
-                                    <h5 class="text-primary font-base lh-1 mb-1">Date: Du 24/05/2024 au 25/05/2024</h6>
-                                    <h5 class="fs-11 fw-semi-bold text-facebook mb-3">Heure de début: 20:45</h6>
-                                    <h5 class="fs-11 fw-semi-bold text-facebook mb-3">Lieu de l'évènement: Cotonou</h6>
-                                    <p class="fs-11 fw-semi-bold text-facebook mb-3">
-                                      Descrption:
-                                           Du lourd les amis
-                                    </p>
-                                    <h5 class="mb-0 text-facebook">Organisateur: HOUNKPONOU Floriane</h>
-                                      <img class="position-absolute end-0 bottom-0 mb-2 me-2" src="assets/img/icons/master-card.png" alt="" width="70" />
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="tab-post" role="tabpanel" aria-labelledby="post-tab">
-                         <h5>
-                            Informations
-                         </h5>
-                        </div>
-
-                        <div class="tab-pane fade" id="tab-ticket" role="tabpanel" aria-labelledby="ticket-tab">
-
-                            <div class="card mb-3">
-                                <div class="card-header">
-                                  <h5 class="mb-0">Différents types de tickets</h5>
-                                </div>
-                                <div class="card-body bg-body-tertiary">
-                                  <h5>
-                                    Faites vos réservations
-                                  </h5>
-                                  <hr />
-                                  <h6 class="fs-9">Options de tarification:</h6>
-                                  <div class="form-check"><input class="form-check-input" id="customCheck1" type="checkbox" checked="checked" /><label class="form-check-label align-top" for="customCheck1">Activer la tarification variable.</label></div>
-                                  <div class="form-check mt-2"><input class="form-check-input" id="customCheck2" type="checkbox" /><label class="form-check-label align-top" for="customCheck2">Activez le mode d’achat multi-options.</label></div>
-                                  <table class="table table-bordered border-200 mt-3 bg-body-emphasis">
-                                    <thead>
-                                      <tr class="fs-10">
-                                        <th>Type de Ticket</th>
-                                        <th>Prix</th>
-                                        <th>Réserver</th>
-                                        <th></th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td><input class="form-control form-control-sm" type="text" placeholder="Option Name" value="Standard" /></td>
-                                        <td><input class="form-control form-control-sm" type="text" placeholder="Price" value="$0.00" /></td>
-                                        <td class="text-center align-middle">
-                                          <div class="form-check mb-0"><input class="form-check-input float-none" id="customRadio1" type="radio" name="customRadio" checked="checked" /><label class="form-check-label" for="customRadio1"></label></div>
-                                        </td>
-                                        <td class="text-center align-middle"><button class="btn btn-link btn-sm"><span class="fas fa-times-circle text-danger" data-fa-transform="shrink-2"></span></button></td>
-                                      </tr>
-                                      <tr>
-                                        <td><input class="form-control form-control-sm" type="text" placeholder="Option Name" value="Vip" /></td>
-                                        <td><input class="form-control form-control-sm" type="text" placeholder="Price" value="$5.00" /></td>
-                                        <td class="text-center align-middle">
-                                          <div class="form-check mb-0"><input class="form-check-input float-none" id="customRadio2" type="radio" name="customRadio" /><label class="form-check-label" for="customRadio2"></label></div>
-                                        </td>
-                                        <td class="text-center align-middle"><button class="btn btn-link btn-sm"><span class="fas fa-times-circle text-danger" data-fa-transform="shrink-2"></span></button></td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>
-
-                        </div>
-
-                        <div class="tab-pane fade" id="tab-avis" role="tabpanel" aria-labelledby="avis-tab">
-                            <div class="col-12">
-
-                                <label class="form-label" for="event-description">Avis</label>
-                                <textarea class="form-control" id="event-description" rows="6" name="description"> </textarea>
-
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="tab-maps" role="tabpanel" aria-labelledby="maps-tab">
-                            <h5>
-                                Localisation maps de l'évènement
-                            </h5>
-                        </div>
-
-                      </div>
-
-                </div>
-
-            </div>
-        </div>
-
-      </div>
 </div>
+
+
+
 
 
 
 
 @endsection
+
 
