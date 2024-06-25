@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="h-[15vh] text-5xl font-semibold w-full pl-10 text-white text-left flex items-center">
+<h1 class="text-4xl font-bold w-full px-8 xl:px-28 text-white mb-10">
     Event Discovery
-</div>
+</h1>
 
 {{-- <div class="relative xl:hidden group">
     <div class="flex items-center justify-center p-0 text-white hover:bg-slate-50/20 rounded-full">
@@ -21,146 +21,116 @@
 
 </div> --}}
 
-<div class="h-10 bg-[#161616] hidden lg:flex gap-8 justify-between items-center px-2 xl:px-10 w-full mb-8">
-    <div class="font-semibold inline-flex items-center px-4 py-0.5 rounded-full border w-auto bg-transparent">
-        <span class="text-white/80">Show on Map</span>
-        <i data-lucide="compass" class="text-white/70 ml-1"></i>
+<div class="h-10 bg-[#161616] hidden lg:flex gap-8 justify-between items-center px-8 xl:px-28 w-full mb-8">
+    <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
+        <span class="text-white/80 text-xs">Show on Map</span>
+        <i data-lucide="compass" class="text-white/70 size-4"></i>
     </div>
 
-    <div class="max-w-2/3 h-full flex justify-end xl:justify-evenly items-center space-x-8">
-        <div class="font-semibold inline-flex items-center px-4 py-0.5 rounded-full border w-auto bg-transparent">
-            <span class="text-white/80">This Weekend</span>
+    <div class="h-full flex justify-end xl:justify-evenly items-center space-x-8">
+        <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
+            <span class="text-white/80 text-xs">This Weekend</span>
             <i data-lucide="chevron-down" class="text-white/70 ml-1"></i>
         </div>
-        <div class="font-semibold inline-flex items-center px-4 py-0.5 rounded-full border w-auto bg-transparent">
-            <span class="text-white/80">Availability</span>
+        <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
+            <span class="text-white/80 text-xs">Availability</span>
             <i data-lucide="chevron-down" class="text-white/70 ml-1"></i>
         </div>
-        <div class="font-semibold inline-flex items-center px-4 py-0.5 rounded-full border w-auto bg-transparent">
-            <span class="text-white/80">Price Range</span>
+        <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
+            <span class="text-white/80 text-xs">Price Range</span>
             <i data-lucide="chevron-down" class="text-white/70 ml-1"></i>
         </div>
         <div class="flex items-center space-x-6">
-            <span class="text-white/80 ml-40">Sort by</span>
-            <div class="font-bold inline-flex items-center px-4 py-0.5 rounded-full border w-auto bg-transparent">
-                <span class="text-white/80">Recommended</span>
+            <span class="text-white/80 ml-40 text-xs">Sort by</span>
+            <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
+                <span class="text-white/80 text-xs">Recommended</span>
                 <i data-lucide="chevron-down" class="text-white/70 ml-1"></i>
             </div>
         </div>
     </div>
 </div>
 
-<div class="flex flex-col lg:flex-row">
+<div class="grid grid-cols-1 xl:grid-cols-4 xl:gap-8 px-8 xl:px-28 relative ">
 
-    <div class="w-full lg:w-auto">
-        <div class="flex flex-col rounded-3xl h-full lg:w-[320px] ml-10 bg-[#161616] overflow-hidden">
-            <div class="bg-[#e9ec3f] w-full h-10 flex justify-between items-center px-12">
-                <div class="text-black space-y-1">
-                    <p class="font-bold text-base">EVENEMENTS</p>
-                </div>
+    <div class="w-full xl:col-span-1 lg:w-auto mb-8 xl:mb-0 flex justify-center  p-1 h-fit max-h-[700px] top-2 xl:sticky ">
+        <div class="flex flex-col rounded-3xl w-full lg:w-[320px] bg-[#161616] overflow-hidden ">
+            <div class="bg-[#d6f260] w-full h-12 flex justify-start items-center px-6">
+                <p class="font-bold text-base">Evènements</p>
             </div>
-            <div>
-                <div class="flex items-center space-x-2 px-3 py-8 relative">
-                    <i data-lucide="square" class="text-white/70 w-4"></i>
-                    <span class="flex-1 text-white/80">Concerts</span>
-                    <i data-lucide="chevron-down" class="text-white/70 w-4"></i>
-                    <hr class="absolute bottom-2 left-8 w-[80%] bg-transparent" style="transform: translateY(-50%); height: 1px;">
+            <div class=" pb-8">
+                <div class="flex items-center gap-4 mx-6 py-3 relative border-b-[1px] border-white/30">
+                    <input type="checkbox" name="" class="" id="">
+                    <label for="" class="text-white">Comedy</label>
                 </div>
-                <div class="flex items-center space-x-2 px-3 py-8 relative">
+                <div class="flex items-center gap-4 mx-6 py-3 relative border-b-[1px] border-white/30">
+                    <input type="checkbox" name="" class="" id="">
+                    <label for="" class="text-white">Concerts</label>
+                </div>
+                <div class="flex items-center gap-4 mx-6 py-3 relative border-b-[1px] border-white/30">
+                    <input type="checkbox" name="" class="" id="">
+                    <label for="" class="text-white">Exhibition</label>
+                </div>
+                <div class="flex items-center gap-4 mx-6 py-3 relative border-b-[1px] border-white/30">
+                    <input type="checkbox" name="" class="" id="">
+                    <label for="" class="text-white">Sport</label>
+                </div>
+
+                
+
+                {{-- <div class="flex items-center space-x-2 px-3 py-8 relative">
                     <i data-lucide="square" class="text-white/70 w-4"></i>
                     <span class="flex-1 text-white/80">Performing & Visual Arts</span>
                     <i data-lucide="chevron-down" class="text-white/70 w-4"></i>
                     <hr class="absolute bottom-2 left-8 w-[80%] bg-transparent" style="transform: translateY(-50%); height: 1px;">
-                </div>
-                <div class="flex items-center space-x-2 px-3 py-8 relative">
-                    <i data-lucide="square" class="text-white/70 w-4"></i>
-                    <span class="flex-1 text-white/80">Cinema & Theatres</span>
-                    <i data-lucide="chevron-down" class="text-white/70 w-4"></i>
-                    <hr class="absolute bottom-2 left-8 w-[80%] bg-[#202020]" style="transform: translateY(-50%); height: 1px;">
-                </div>
-                <div class="flex items-center space-x-2 px-3 py-8 relative">
-                    <i data-lucide="square" class="text-white/70 w-4"></i>
-                    <span class="flex-1 text-white/80">Exhibitions</span>
-                    <i data-lucide="chevron-down" class="text-white/70 w-4"></i>
-                    <hr class="absolute bottom-2 left-8 w-[80%] bg-[#202020]" style="transform: translateY(-50%); height: 1px;">
-                </div>
-                <div class="flex items-center space-x-2 px-3 py-8 relative">
-                    <i data-lucide="square" class="text-white/70 w-4"></i>
-                    <span class="flex-1 text-white/80">Sports</span>
-                    <i data-lucide="chevron-down" class="text-white/70 w-4"></i>
-                    <hr class="absolute bottom-2 left-8 w-[80%] bg-[#202020]" style="transform: translateY(-50%); height: 1px;">
-                </div>
-                <div class="flex items-center space-x-2 px-3 py-8 relative">
-                    <i data-lucide="square" class="text-white/70 w-4"></i>
-                    <span class="flex-1 text-white/80">Festivals</span>
-                    <i data-lucide="chevron-down" class="text-white/70 w-4"></i>
-                    <hr class="absolute bottom-2 left-8 w-[80%] bg-[#202020]" style="transform: translateY(-50%); height: 1px;">
-                </div>
-                <div class="flex items-center space-x-2 px-3 py-8 relative">
-                    <i data-lucide="square" class="text-white/70 w-4"></i>
-                    <span class="flex-1 text-white/80">Fashion & Beauty</span>
-                    <i data-lucide="chevron-down" class="text-white/70 w-4"></i>
-                    <hr class="absolute bottom-2 left-8 w-[80%] bg-[#202020]" style="transform: translateY(-50%); height: 1px;">
-                </div>
-                <div class="flex items-center space-x-2 px-3 py-8 relative">
-                    <i data-lucide="square" class="text-white/70 w-4"></i>
-                    <span class="flex-1 text-white/80">Museums</span>
-                    <i data-lucide="chevron-down" class="text-white/70 w-4"></i>
-                    <hr class="absolute bottom-2 left-8 w-[80%] bg-[#202020]" style="transform: translateY(-50%); height: 1px;">
-                </div>
-                <div class="flex items-center space-x-2 px-3 py-8 relative">
-                    <i data-lucide="square" class="text-white/70 w-4"></i>
-                    <span class="flex-1 text-white/80">Business</span>
-                    <i data-lucide="chevron-down" class="text-white/70 w-4"></i>
-                    <hr class="absolute bottom-2 left-8 w-[80%] bg-[#202020]" style="transform: translateY(-50%); height: 1px;">
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
 
-    <div class="w-full lg:ml-20">
-        <div class="xl:px-28 w-full h-full mb-12">
-            <div class="flex flex-col gap-6 lg:flex-row-reverse lg:gap-0 lg:rounded-3xl overflow-hidden mb-8">
-                <div class="h-[310px] lg:h-[450px] w-full">
+    <div class="w-full col-span-3 p-1">
+        <div class="w-full h-full mb-12">
+
+            <div class="flex flex-col gap-6 lg:flex-row-reverse lg:gap-0 lg:rounded-3xl overflow-hidden mb-8 xl:h-[350px]">
+                <div class="h-[310px] lg:h-[full] w-full">
                     <img src={{ asset('image/img2.jpeg')}} alt="" class="w-full h-full object-cover">
                 </div>
                 <div class="w-full lg:w-[630px] rounded-3xl lg:rounded-none min-h-[300px] bg-[#232323] p-2 py-4 flex flex-col gap-2 ">
                     <div class="w-full flex flex-col justify-center items-center px-4 lg:items-start">
-                        <span class="text-sm text-slate-50/70 font-semibold mb-2 self-start">13 mars 2025</span>
-                        <p class="text-3xl text-white font-bold w-60">Jazz Party</p>
+                        <span class="text-xs text-slate-50/70 font-semibold mb-2 self-start">13 mars 2025</span>
+                        <p class="text-2xl text-white font-bold w-60">Jazz Party</p>
                     </div>
                     <div class="flex flex-col gap-4 items-center p-4 font-semibold flex-grow">
-                        <p class="text-center text-white/90 lg:text-start">
+                        <p class="text-center text-white/90 lg:text-start text-sm">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat?
                             Harum magnam reprehenderit quam a, architecto placeat?
                         </p>
 
                     </div>
-                    <div class="w-full flex space-x-40 mt-auto">
-                        <button  class="bg-[#d6f260] px-10 py-2 rounded-full hover:bg-[#d6f260]/80 font-bold">Read More</button>
-                        <i data-lucide="circle-arrow-out-up-right" class="size-8 text-white"></i>
+                    <div class="w-full flex justify-between items-center px-4">
+                        <button  class="bg-[#d6f260] px-6 py-1 rounded-full hover:bg-[#d6f260]/80 font-bold">Read More</button>
+                        <i data-lucide="circle-arrow-out-up-right" class="size-6 text-white"></i>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col gap-6 lg:flex-row-reverse lg:gap-0 lg:rounded-3xl overflow-hidden mb-8">
-                <div class="h-[310px] lg:h-[450px] w-full">
+            <div class="flex flex-col gap-6 lg:flex-row-reverse lg:gap-0 lg:rounded-3xl overflow-hidden mb-8 xl:h-[350px]">
+                <div class="h-[310px] lg:h-full w-full">
                     <img src={{ asset('image/img1.jpeg')}} alt="" class="w-full h-full object-cover">
                 </div>
-                <div class="w-full lg:w-[630px] rounded-3xl lg:rounded-none min-h-[300px] bg-[#232323] p-2 py-4 flex flex-col gap-2">
+                <div class="w-full lg:w-[630px] rounded-3xl lg:rounded-none min-h-[300px] bg-[#232323] p-2 py-4 flex flex-col gap-2 ">
                     <div class="w-full flex flex-col justify-center items-center px-4 lg:items-start">
-                        <span class="text-sm text-slate-50/70 font-semibold mb-2 self-start">13 mars 2025</span>
-                        <p class="text-3xl text-white font-bold w-60">Jazz Party</p>
+                        <span class="text-xs text-slate-50/70 font-semibold mb-2 self-start">13 mars 2025</span>
+                        <p class="text-2xl text-white font-bold w-60">Jazz Party</p>
                     </div>
                     <div class="flex flex-col gap-4 items-center p-4 font-semibold flex-grow">
-                        <p class="text-center text-white/90 lg:text-start">
+                        <p class="text-center text-white/90 lg:text-start text-sm">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat?
                             Harum magnam reprehenderit quam a, architecto placeat?
                         </p>
-                       
+
                     </div>
-                    <div class="w-full flex space-x-40 mt-auto">
-                        <button  class="bg-[#d6f260] px-10 py-2 rounded-full hover:bg-[#d6f260]/80 font-bold">Read More</button>
-                        <i data-lucide="circle-arrow-out-up-right" class="size-8 text-white"></i>
+                    <div class="w-full flex justify-between items-center px-4">
+                        <button  class="bg-[#d6f260] px-6 py-1 rounded-full hover:bg-[#d6f260]/80 font-bold">Read More</button>
+                        <i data-lucide="circle-arrow-out-up-right" class="size-6 text-white"></i>
                     </div>
                 </div>
             </div>

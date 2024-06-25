@@ -6,9 +6,9 @@
                 <div class="text-white font-bold text-2xl flex flex-row mt-8">
                     Logo
                 </div>
-                <div class="text-white font-bold text-2xl flex flex-row">
-                    <input type="text" class="border-[1px] border-white/70 bg-transparent rounded-md m-3 w-48">
-                    <button class="text-black bg-white rounded-md h-8 w-40 mt-3 pb-4 flex justify-center">
+                <div class="text-white flex flex-row items-center mb-8">
+                    <input type="text" class="border-[1px] border-white/70 bg-transparent rounded-full w-40 pl-2 h-[30px] pr-6">
+                    <button class="text-black bg-[#d6f260] rounded-full h-8 w-40 pb-4 flex justify-center -ml-6">
                         <span class="text-center text-lg text-black font-semibold mb-2 self-start">
                             Join for free
                         </span>
@@ -28,7 +28,7 @@
 
                 <div class="w-full flex items-center pt-20">
                     <span class="text-center text-sm text-white font-semibold mb-2 self-start">
-                        &copy; Copyright Notice: @ [2024] Events. All rights reserved.
+                        &copy; Copyright Notice: @ 2024 Events. All rights reserved.
                     </span>
                 </div>
             </div>
@@ -82,3 +82,16 @@
 <script>
     lucide.createIcons();
 </script>
+
+{{-- Pour gérer le changement de thème --}}
+
+{{-- <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    });
+  </script> --}}

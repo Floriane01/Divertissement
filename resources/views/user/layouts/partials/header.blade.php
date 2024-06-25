@@ -7,7 +7,7 @@
     <title>Events | @yield('title')</title>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-[#000002]">
+<body class="bg-[#181818]">
     @include('user.layouts.partials.navbar')
     
 
