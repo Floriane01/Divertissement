@@ -28,7 +28,7 @@ Route::get('/', function () {
 
 
 Route::get('/flo', function() {
-    return view('user/evenement/index');
+    return view('user/ticket/form');
 });
 
 

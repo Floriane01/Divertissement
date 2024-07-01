@@ -9,7 +9,7 @@
     <div class="w-1/3 relative">
         <input type="text"
             class="border-none pr-6 bg-transparent font-semibold text-black/80 placeholder:text-black/70 placeholder:font-semibold h-[40px] outline-none w-full"
-            placeholder="Search">
+            placeholder="Rechercher">
         <i data-lucide="search" class="absolute top-[55%] -translate-y-1/2 right-1 size-4 text-black/70"></i>
     </div>
     <div class="max-w-2/3 h-full flex justify-end xl:justify-evenly items-center">
@@ -19,16 +19,16 @@
             <i data-lucide="calendar" class="absolute top-[18%] left-2 text-black/70"></i>
         </div>
         <div class="relative hidden xl:block ">
-            <input type="text" placeholder="Location" name="text" id=""
+            <input type="text" placeholder="Localisation" name="text" id=""
                 class="outline-none border-none placeholder:text-black/80 placeholder:font-bold text-black/80 bg-transparent pl-10 w-full h-[35px]">
             <i data-lucide="map-pin" class="absolute top-[18%] left-2 text-black/70"></i>
         </div>
         <div class="relative hidden xl:block">
-            <input type="text" placeholder="Type of Event" name="text" id=""
+            <input type="text" placeholder="Type d'évènement" name="text" id=""
                 class="outline-none border-none placeholder:text-black/80 placeholder:font-bold text-black/80 bg-transparent pl-10 w-full h-[35px]">
             <i data-lucide="grip-vertical" class="absolute top-[18%] left-2 text-black/70"></i>
         </div>
-        <button class="text-black font-bold min-w-[120px] px-4 py-2 rounded-full bg-blue-400">Search</button>
+        <button class="text-black font-bold min-w-[120px] px-4 py-2 rounded-full bg-blue-400">Rechercher</button>
     </div>
 
 </div>
@@ -52,91 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col rounded-3xl h-[300px] w-full bg-green-400 overflow-hidden">
-            <div class="h-[75%]">
-                <img src={{ asset('image/img2.jpeg')}} alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="bg-[#222] w-full h-[25%] flex justify-between items-center px-12">
-                <div class="text-white space-y-1">
-                    <p class="font-bold text-base">Local art Fair</p>
-                    <p class=" flex  text-xs font-semibold gap-2">
-                        <i data-lucide="calendar" class="size-4"></i>
-                        February 25, 2024
-                    </p>
-                </div>
-                <div>
-                    <i data-lucide="circle-arrow-out-up-right" class="size-8 text-white"></i>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col rounded-3xl h-[300px] w-full bg-green-400 overflow-hidden">
-            <div class="h-[75%]">
-                <img src={{ asset('image/img5.jpeg')}} alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="bg-[#222] w-full h-[25%] flex justify-between items-center px-12">
-                <div class="text-white space-y-1">
-                    <p class="font-bold text-base">Local art Fair</p>
-                    <p class=" flex  text-xs font-semibold gap-2">
-                        <i data-lucide="calendar" class="size-4"></i>
-                        February 25, 2024
-                    </p>
-                </div>
-                <div>
-                    <i data-lucide="circle-arrow-out-up-right" class="size-8 text-white"></i>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col rounded-3xl h-[300px] w-full bg-green-400 overflow-hidden">
-            <div class="h-[75%]">
-                <img src={{ asset('image/img2.jpeg')}} alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="bg-[#222] w-full h-[25%] flex justify-between items-center px-12">
-                <div class="text-white space-y-1">
-                    <p class="font-bold text-base">Local art Fair</p>
-                    <p class=" flex  text-xs font-semibold gap-2">
-                        <i data-lucide="calendar" class="size-4"></i>
-                        February 25, 2024
-                    </p>
-                </div>
-                <div>
-                    <i data-lucide="circle-arrow-out-up-right" class="size-8 text-white"></i>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col rounded-3xl h-[300px] w-full bg-green-400 overflow-hidden">
-            <div class="h-[75%]">
-                <img src={{ asset('image/img3.jpeg')}} alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="bg-[#222] w-full h-[25%] flex justify-between items-center px-12">
-                <div class="text-white space-y-1">
-                    <p class="font-bold text-base">Local art Fair</p>
-                    <p class=" flex  text-xs font-semibold gap-2">
-                        <i data-lucide="calendar" class="size-4"></i>
-                        February 25, 2024
-                    </p>
-                </div>
-                <div>
-                    <i data-lucide="circle-arrow-out-up-right" class="size-8 text-white"></i>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col rounded-3xl h-[300px] w-full bg-green-400 overflow-hidden">
-            <div class="h-[75%]">
-                <img src={{ asset('image/img1.jpeg')}} alt="" class="w-full h-full object-cover">
-            </div>
-            <div class="bg-[#222] w-full h-[25%] flex justify-between items-center px-12">
-                <div class="text-white space-y-1">
-                    <p class="font-bold text-base">Local art Fair</p>
-                    <p class=" flex  text-xs font-semibold gap-2">
-                        <i data-lucide="calendar" class="size-4"></i>
-                        February 25, 2024
-                    </p>
-                </div>
-                <div>
-                    <i data-lucide="circle-arrow-out-up-right" class="size-8 text-white"></i>
-                </div>
-            </div>
-        </div>
+
 
     </div>
 
@@ -176,12 +92,12 @@
 
 <div class="px-8 xl:px-28 mb-8 bg-[#232323] py-4">
     <div class="flex flex-col gap-6 mb-8">
-        <h1 class="text-4xl text-white">Let's make it
+        <h1 class="text-4xl text-white">Rendons-le
             <span class="px-4 py-1 rounded-full text-3xl font-semibold text-[#232323] bg-[#d6f260]">
-                personal
+                personnel
             </span>
         </h1>
-        <p class="text-slate-50/60 text-lg">Select your interests to get event suggestions based on what you love</p>
+        <p class="text-slate-50/60 text-lg">Sélectionnez vos centres d'intérêt pour obtenir des suggestions d'événements en fonction de ce que vous aimez</p>
     </div>
     <div class="w-full">
 
@@ -190,7 +106,7 @@
                 <input type="checkbox" name="" id="chk1" class="hidden peer">
                 <label for="chk1"
                     class="bg-white min-w-[100px] p-2 rounded-full font-bold cursor-pointer peer-checked:bg-[#d6f260]">
-                    Comedy </label>
+                    Comedie </label>
             </div>
             <div>
                 <input type="checkbox" name="" id="chk2" class="hidden peer">
@@ -202,13 +118,13 @@
                 <input type="checkbox" name="" id="chk3" class="hidden peer">
                 <label for="chk3"
                     class="bg-white min-w-[100px] p-2 rounded-full font-bold cursor-pointer peer-checked:bg-[#d6f260]">
-                    Jazz </label>
+                    Gala </label>
             </div>
             <div>
                 <input type="checkbox" name="" id="chk4" class="hidden peer">
                 <label for="chk4"
                     class="bg-white min-w-[100px] p-2 rounded-full font-bold cursor-pointer peer-checked:bg-[#d6f260]">
-                    Zouk </label>
+                    Formation universitaire </label>
             </div>
             <div>
                 <input type="checkbox" name="" id="chk5" class="hidden peer">
@@ -224,17 +140,16 @@
 <div class="w-full flex justify-center items-center min-h-[700px] relative bg-[#181818]">
 
     <div class="flex flex-col gap-6 justify-center items-center">
-        <span class="text-white/70 text-base font-semibold">#JoinTheConversation</span>
+        <span class="text-white/70 text-base font-semibold">#Evènements</span>
 
-        <h1 class="text-center font-bold text-4xl text-white xl:text-5xl xl:w-[600px]">Constant Updates & Community
-            Interaction</h1>
+        <h1 class="text-center font-bold text-4xl text-white xl:text-5xl xl:w-[600px]">Catégories d'évènements</h1>
 
-        <button class="px-28 py-2 font-semibold text-2xl bg-violet-400/90  rounded-full">Join Now!</button>
+        <button class="px-28 py-2 font-semibold text-2xl bg-violet-400/90  rounded-full">Parcourir!</button>
     </div>
 
     <div class="absolute w-full h-48 top-[40px] flex justify-center">
         <div class="h-24 w-24 sm:w-36 sm:h-36 xl:w-48 xl:h-48 rounded-full bg-yellow-200 overflow-hidden">
-            <img src={{ asset('image/avatar1.jpg')}} alt="" class="w-full h-full object-cover">
+            <img src={{ asset('image/img4.jpeg')}} alt="" class="w-full h-full object-cover">
         </div>
     </div>
     <div
@@ -260,7 +175,7 @@
 </div>
 
 <div class="w-full h-[80vh] flex flex-col items-center justify-center gap-16 bg-[#232323] ">
-    <h1 class="text-4xl text-white font-bold">What People Says...</h1>
+    <h1 class="text-4xl text-white font-bold">Les commentaires en rapport avec les évènements...</h1>
     <div class="w-full flex flex-nowrap items-center pl-28 gap-4 overflow-x-scroll scrollbar-none">
         <div
             class="bg-violet-300 w-[400px] h-[200px] min-w-[400px] rounded-[36px] flex flex-col justify-between px-8 py-10">
@@ -326,7 +241,7 @@
 </div>
 
 <div class="px-8 xl:px-28 py-8 flex flex-col gap-8">
-    <h1 class=" text-2xl lg:text-4xl text-white font-bold font-poppins">Partnership Opportunities .</h1>
+    <h1 class=" text-2xl lg:text-4xl text-white font-bold font-poppins">Opportunités de partenariat .</h1>
     {{-- <h1 class="text-4xl text-white font-bold font-inter">Partnership Opportunities .</h1> --}}
     <div class="w-full grid grid-cols-1 xl:grid-cols-2">
         <div class="flex flex-col gap-8">
@@ -351,11 +266,9 @@
                 </div>
             </div>
             <div class="flex w-full justify-evenly items-center h-[100px] gap-4">
-                <button class="px-4 xl:px-8 py-2 rounded-full border border-white/70 bg-transparent text-white font-bold">Create
-                    Your Event</button>
+                <button class="px-4 xl:px-8 py-2 rounded-full border border-white/70 bg-transparent text-white font-bold">Créer votre évènement</button>
                 <button
-                    class="px-8 py-2 rounded-full border border-white/70 bg-violet-300 text-[#111111] font-bold">Become
-                    a Partner</button>
+                    class="px-8 py-2 rounded-full border border-white/70 bg-violet-300 text-[#111111] font-bold">Devenir un partenaire</button>
             </div>
         </div>
         <div class="flex items-end justify-center text-white py-8">

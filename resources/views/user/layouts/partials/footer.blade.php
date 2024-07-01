@@ -10,7 +10,7 @@
                     <input type="text" class="border-[1px] border-white/70 bg-transparent rounded-full w-40 pl-2 h-[30px] pr-6">
                     <button class="text-black bg-[#d6f260] rounded-full h-8 w-40 pb-4 flex justify-center -ml-6">
                         <span class="text-center text-lg text-black font-semibold mb-2 self-start">
-                            Join for free
+                            Nous joindre
                         </span>
                     </button>
                 </div>
@@ -28,7 +28,7 @@
 
                 <div class="w-full flex items-center pt-20">
                     <span class="text-center text-sm text-white font-semibold mb-2 self-start">
-                        &copy; Copyright Notice: @ 2024 Events. All rights reserved.
+                        &copy; Avis de droit d’auteur : @ Événements 2024. Tous droits réservés.
                     </span>
                 </div>
             </div>
@@ -38,40 +38,39 @@
                 <div class="text-white font-semibold text-sm mt-10">
                     QUICK LINKS
                 </div>
-                <a href="#" class="text-white">About us</a>
-                <a href="#" class="text-white">Event Discovery</a>
-                <a href="#" class="text-white">Community</a>
-                <a href="#" class="text-white">Event Organizing</a>
-                <a href="#" class="text-white">Partnerships</a>
-                <a href="#" class="text-white">Support</a>
+                <a href="#" class="text-white">À propos de nous</a>
+                <a href="#" class="text-white">Evènement</a>
+                <a href="#" class="text-white">Organisation d'événements</a>
+                <a href="#" class="text-white">Partenariat</a>
+                {{-- <a href="#" class="text-white">Support</a> --}}
                 <a href="#" class="text-white">FAQ</a>
             </div>
 
             <div class="w-full md:w-1/2 lg:w-auto px-2 flex flex-col gap-4">
                 <div class="text-white font-semibold text-sm mt-10">
-                    RESOURCES
+                    RESSOURCES
                 </div>
-                <a href="#" class="text-white">Blog</a>
-                <a href="#" class="text-white">Help Center</a>
-                <a href="#" class="text-white">Privacy Policy</a>
-                <a href="#" class="text-white">Terms of Use</a>
+                {{-- <a href="#" class="text-white">Blog</a> --}}
+                {{-- <a href="#" class="text-white">Help Center</a> --}}
+                <a href="#" class="text-white">Politique privée</a>
+                {{-- <a href="#" class="text-white">Terms of Use</a> --}}
             </div>
 
             <div class="w-full md:w-1/2 lg:w-auto px-2 flex flex-col gap-4">
                 <div class="text-white font-semibold text-sm mt-10">
-                    CONNECT WITH US
+                    CONNECTE-TOI AVEC NOUS
                 </div>
-                <a href="#" class="text-white">Contact us</a>
-                <a href="#" class="text-white">Newsletter signup</a>
-                <a href="#" class="text-white">Follow us</a>
+                <a href="#" class="text-white">Contactez-nous</a>
+                <a href="#" class="text-white">Inscription à la newsletter</a>
+                <a href="#" class="text-white">Nous suivre</a>
             </div>
 
             <div class="w-full md:w-1/2 lg:w-auto px-2 flex flex-col gap-4">
                 <div class="text-white font-semibold text-sm mt-10">
                     LEGAL
                 </div>
-                <a href="#" class="text-white">Accessibility</a>
-                <a href="#" class="text-white">User Agreement</a>
+                <a href="#" class="text-white">Accessibilité</a>
+                <a href="#" class="text-white">Accord de l'utilisateur</a>
             </div>
         </div>
     </div>

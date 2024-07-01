@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->integer('telephone');
             $table->string('photo');
+            $table->boolean('premium');
             $table->string('created_by')->nullable();
             $table->string('updated_by')->nullable();
             $table->string('deleted_by')->nullable();

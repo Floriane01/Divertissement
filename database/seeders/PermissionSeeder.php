@@ -26,7 +26,7 @@ class PermissionSeeder extends Seeder
         $adminPermissions = [
             'Gestion des Rôles',
             'Gestion des Evènements',
-            'Gestion des Catégories dEvènements',
+            'Gestion des Catégories d'/'Evènements',
             'Gestion des Types de Tickets',
             'Gestion des Tickets',
             'Gestion des utilisateurs',

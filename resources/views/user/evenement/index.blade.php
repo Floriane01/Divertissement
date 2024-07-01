@@ -3,7 +3,7 @@
 @section('content')
 
 <h1 class="text-4xl font-bold w-full px-8 xl:px-28 text-white mb-10">
-    Event Discovery
+    A la découverte des évènements
 </h1>
 
 {{-- <div class="relative xl:hidden group">
@@ -23,27 +23,27 @@
 
 <div class="h-10 bg-[#161616] hidden lg:flex gap-8 justify-between items-center px-8 xl:px-28 w-full mb-8">
     <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
-        <span class="text-white/80 text-xs">Show on Map</span>
+        <span class="text-white/80 text-xs">Afficher sur la carte</span>
         <i data-lucide="compass" class="text-white/70 size-4"></i>
     </div>
 
     <div class="h-full flex justify-end xl:justify-evenly items-center space-x-8">
         <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
-            <span class="text-white/80 text-xs">This Weekend</span>
+            <span class="text-white/80 text-xs">Ce Weekend</span>
             <i data-lucide="chevron-down" class="text-white/70 ml-1"></i>
         </div>
         <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
-            <span class="text-white/80 text-xs">Availability</span>
+            <span class="text-white/80 text-xs">Disponible</span>
             <i data-lucide="chevron-down" class="text-white/70 ml-1"></i>
         </div>
         <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
-            <span class="text-white/80 text-xs">Price Range</span>
+            <span class="text-white/80 text-xs">Échelle des prix</span>
             <i data-lucide="chevron-down" class="text-white/70 ml-1"></i>
         </div>
         <div class="flex items-center space-x-6">
-            <span class="text-white/80 ml-40 text-xs">Sort by</span>
+            <span class="text-white/80 ml-40 text-xs">Trier par</span>
             <div class="font-semibold flex items-center gap-4 justify-evenly px-4 py-0.5 rounded-full border-[0.5px] bg-transparent">
-                <span class="text-white/80 text-xs">Recommended</span>
+                <span class="text-white/80 text-xs">Recommandation</span>
                 <i data-lucide="chevron-down" class="text-white/70 ml-1"></i>
             </div>
         </div>
@@ -75,7 +75,7 @@
                     <label for="" class="text-white">Sport</label>
                 </div>
 
-                
+
 
                 {{-- <div class="flex items-center space-x-2 px-3 py-8 relative">
                     <i data-lucide="square" class="text-white/70 w-4"></i>
@@ -91,7 +91,7 @@
         <div class="w-full h-full mb-12">
 
             <div class="flex flex-col gap-6 lg:flex-row-reverse lg:gap-0 lg:rounded-3xl overflow-hidden mb-8 xl:h-[350px]">
-                <div class="h-[310px] lg:h-[full] w-full">
+                <div class="h-[310px] lg:h-full w-full">
                     <img src={{ asset('image/img2.jpeg')}} alt="" class="w-full h-full object-cover">
                 </div>
                 <div class="w-full lg:w-[630px] rounded-3xl lg:rounded-none min-h-[300px] bg-[#232323] p-2 py-4 flex flex-col gap-2 ">
@@ -107,7 +107,7 @@
 
                     </div>
                     <div class="w-full flex justify-between items-center px-4">
-                        <button  class="bg-[#d6f260] px-6 py-1 rounded-full hover:bg-[#d6f260]/80 font-bold">Read More</button>
+                        <button  class="bg-[#d6f260] px-6 py-1 rounded-full hover:bg-[#d6f260]/80 font-bold">Lire plus</button>
                         <i data-lucide="circle-arrow-out-up-right" class="size-6 text-white"></i>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
 
                     </div>
                     <div class="w-full flex justify-between items-center px-4">
-                        <button  class="bg-[#d6f260] px-6 py-1 rounded-full hover:bg-[#d6f260]/80 font-bold">Read More</button>
+                        <button  class="bg-[#d6f260] px-6 py-1 rounded-full hover:bg-[#d6f260]/80 font-bold">Lire plus</button>
                         <i data-lucide="circle-arrow-out-up-right" class="size-6 text-white"></i>
                     </div>
                 </div>

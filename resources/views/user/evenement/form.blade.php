@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="h-[15vh] text-5xl font-semibold w-full pl-10 text-white text-left flex items-center">
-    Create an event
+    Créer un évènement
 </div>
 
 <div class="flex flex-col lg:flex-row px-4 lg:px-20">
@@ -12,9 +12,9 @@
         <div class="xl:px-10 w-full mb-6">
             <div class="flex flex-col lg:flex-row gap-6 py-10">
                 <div class="flex-1 bg-gray-300 rounded-3xl mb-4 flex justify-center items-center">
-                    <p class="font-bold mt-32">
-                        <i data-lucide="plus" class="text-black w-4"></i>
-                        Add Photo
+                    <p class="font-bold mt-10">
+                        <i data-lucide="plus" class="text-black w-32"></i>
+                        Ajouter image
                     </p>
                 </div>
                 <div class="flex-1 rounded-3xl overflow-hidden mb-4">
@@ -33,35 +33,35 @@
             <form action="" class="flex flex-col gap-4">
                 <div class="flex flex-col pb-4">
                     <label for="title" class="text-white px-2 py-2">
-                        Title
+                        Nom de l'évènement
                     </label>
-                    <p class="text-white/80 px-2 py-2">
+                    {{-- <p class="text-white/80 px-2 py-2">
                         Give a description headline.
-                    </p>
+                    </p> --}}
                     <input type="text" id="title" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full lg:w-[800px] pt-50">
                 </div>
 
                 <div class="flex flex-col pb-4">
                     <label for="category" class="text-white px-2 py-2">
-                        Choose category
+                        Thème de l'évènement
                     </label>
                     <div class="relative w-full lg:w-[800px]">
                         <input type="text" id="category" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
-                        <i data-lucide="chevron-down" class="absolute top-1/2 right-3 transform -translate-y-1/2 text-white/70"></i>
+                        {{-- <i data-lucide="chevron-down" class="absolute top-1/2 right-3 transform -translate-y-1/2 text-white/70"></i> --}}
                     </div>
                 </div>
                 <div class="flex flex-col pb-4">
                     <label for="country" class="text-white px-2 py-2">
-                        Choose country
+                        Lieu de l'évènement
                     </label>
                     <div class="relative w-full lg:w-[800px]">
                         <input type="text" id="country" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
-                        <i data-lucide="chevron-down" class="absolute top-1/2 right-3 transform -translate-y-1/2 text-white/70"></i>
+                        {{-- <i data-lucide="chevron-down" class="absolute top-1/2 right-3 transform -translate-y-1/2 text-white/70"></i> --}}
                     </div>
                 </div>
                 <div class="flex flex-col pb-4">
                     <label for="city" class="text-white px-2 py-2">
-                        City
+                        Date de l'évènement
                     </label>
                     <div class="relative w-full lg:w-[800px]">
                         <input type="text" id="city" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
@@ -72,12 +72,12 @@
                     <label for="description" class="text-white px-2 py-2">
                         Description
                     </label>
-                    <p class="text-white/80 px-2 py-2">
+                    {{-- <p class="text-white/80 px-2 py-2">
                         Give a description headline.
-                    </p>
+                    </p> --}}
                     <input type="text" id="description" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-52 w-full lg:w-[800px] pt-50 pl-2">
                 </div>
-                <div class="flex flex-col pb-4">
+                {{-- <div class="flex flex-col pb-4">
                     <label for="org-details" class="text-white px-2 py-2">
                         Organizational detail
                     </label>
@@ -85,14 +85,14 @@
                         Give a description headline.
                     </p>
                     <input type="text" id="org-details" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-40 w-full lg:w-[800px] pt-50 pl-2">
-                </div>
+                </div> --}}
                 <div class="flex flex-col pb-4 space-y-4">
                     <label for="conditionals" class="text-white px-2 py-4 font-bold">
-                        Conditionals
+                        Date et Heure
                     </label>
                     <div class="flex flex-row items-center space-x-4">
                         <label for="language" class="text-white w-40 py-4 px-2 ">
-                            Language
+                            Informations
                         </label>
                         <div class="relative w-[620px]">
                             <input type="text" id="language" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
@@ -101,7 +101,7 @@
                     </div>
                     <div class="flex flex-row items-center space-x-4">
                         <label for="duration" class="text-white w-40 py-2 px-2">
-                            Duration
+                            Heure de début
                         </label>
                         <div class="relative w-[620px]">
                             <input type="text" id="duration" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
@@ -110,7 +110,7 @@
                     </div>
                     <div class="flex flex-row items-center space-x-4">
                         <label for="participants" class="text-white w-40 py-2 px-2">
-                            Number of participants
+                            Nombre de places disponible
                         </label>
                         <div class="relative w-[620px]">
                             <input type="text" id="participants" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
@@ -119,7 +119,7 @@
                     </div>
                     <div class="flex flex-row items-center space-x-4">
                         <label for="transportation" class="text-white w-40 py-2 px-2">
-                            Transportation
+                            Date limite d'inscription
                         </label>
                         <div class="relative w-[620px]">
                             <input type="text" id="transportation" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col pb-4 space-y-4">
+                {{-- <div class="flex flex-col pb-4 space-y-4">
                     <label for="schedule" class="text-white px-2 py-4 font-bold">
                         Schedule and Start Time
                     </label>
@@ -145,8 +145,8 @@
                         </div>
                         @endforeach
                     </div>
-                </div>
-                <div class="flex flex-col pb-4 space-y-4">
+                </div> --}}
+                {{-- <div class="flex flex-col pb-4 space-y-4">
                     <label for="" class="text-white px-2 py-4 font-bold">
                         Confirmation an order
                     </label>
@@ -174,42 +174,42 @@
                         </div>
                         <p class="text-white" id="confirmNoText">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                     </div>
-                </div>
+                </div> --}}
                 <div class="flex flex-col pb-4 space-y-4">
                     <label for="" class="text-white px-2 py-4 font-bold">
-                        Pricing
+                        Adapter c'est encore plus compliqué que créer les pages quoi
                     </label>
                     <div class="flex flex-row items-center space-x-4 space-y-4">
                         <label for="" class="text-white w-40 py-4 px-2 ">
-                            Price
+                            Organisateurs
                         </label>
                         <div class="relative w-[620px]">
-                            <input type="text" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
+                            <input type="text" placeholder="Rejoindre les organisateurs" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
                             <i data-lucide="dollar-sign" class="absolute top-1/2 right-3 transform -translate-y-1/2 text-white/70"></i>
                         </div>
                     </div>
                     <div class="flex flex-row items-center space-x-4 space-y-4">
                         <label for="" class="text-white w-40 py-2 px-2">
-                            Discount
+                            Sponsors
                         </label>
                         <div class="relative w-[620px]">
-                            <input type="text" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
+                            <input type="text" placeholder="Ajouter sponsor" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
                             <i data-lucide="chevron-down" class="absolute top-1/2 right-3 transform -translate-y-1/2 text-white/70"></i>
                         </div>
                     </div>
-                    <div class="flex flex-row items-center space-x-4 space-y-4 ">
+                    {{-- <div class="flex flex-row items-center space-x-4 space-y-4 ">
                         <label for="" class="text-transparent w-40 py-2 px-2">
                             Discount
                         </label>
                         <div class="relative w-[620px]">
                             <input type="text" placeholder="Enter code"  class="border-[1px] border-white/70 bg-transparent rounded-3xl h-10 w-full pl-4 pr-10">
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
                 <div class="flex flex-col pb-4">
                     <label for="" class="text-white px-2 py-2">
-                        About You/Compagny
+                        A propos de vous
                     </label>
                     <p class="text-white/80 px-2 py-2">
                         Give a description headline.
@@ -218,10 +218,10 @@
                 </div>
                 <div class="flex space-x-4 w-full ">
                     <button class="bg-[#e9ec3f] text-black font-bold py-2 px-4 rounded-full w-[50%]">
-                        Preview
+                        Annuler
                     </button>
                     <button class="bg-purple-400 text-black font-bold py-2 px-4 rounded-full w-[50%]">
-                        Publish
+                        Soumettre
                     </button>
                 </div>
 

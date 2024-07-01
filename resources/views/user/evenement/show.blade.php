@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="h-[15vh] text-5xl font-semibold w-full pl-20 text-white text-left flex items-center">
-    Event Discovery
+    A la découverte de l'évènement
 </div>
 
 <div class="flex flex-col">
@@ -20,7 +20,7 @@
 
             <div class="flex flex-col gap-6 mb-8">
                 <div class="text-2xl font-semibold text-white">
-                    About the event
+                    A propos de l'évènement
                 </div>
                 <p class="text-white/90">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
@@ -32,7 +32,7 @@
 
             <div class="flex flex-col gap-6 mb-8">
                 <div class="text-2xl font-semibold text-white">
-                    Gallery
+                    Affiche de l'évènement
                 </div>
             </div>
 
@@ -45,11 +45,11 @@
 
             <div class="flex flex-col gap-6 mb-8">
                 <div class="text-2xl font-semibold text-white">
-                    Date & Time
+                    Date et Heure de début
                 </div>
                 <span class="text-sm text-slate-50/70 font-semibold mb-2">13 mars 2025</span>
                 <p class="text-white/90">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
+                    N'hésitez pas à nous rejoindre.
                 </p>
             </div>
 
@@ -59,31 +59,31 @@
                 </div>
                 <span class="text-sm text-slate-50/70 font-semibold mb-2">Cotonou</span>
                 <p class="text-white/90">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
+                    Ce n'est pas bien perdu n'est ce pas !?
                 </p>
             </div>
 
             <div class="flex flex-col gap-6 mb-8">
                 <div class="text-2xl font-semibold text-white">
-                    Special Guests
+                    Les sponsors de l'évènement
                 </div>
                 <p class="text-white/90">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
                 </p>
             </div>
 
-            <div class="flex flex-col gap-6 mb-8">
+            {{-- <div class="flex flex-col gap-6 mb-8">
                 <div class="text-2xl font-semibold text-white">
                     Amenities
                 </div>
                 <p class="text-white/90">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
                 </p>
-            </div>
+            </div> --}}
 
             <div class="flex flex-col gap-6 mb-8">
                 <div class="text-2xl font-semibold text-white">
-                    Contact Information
+                    Informations supplémentaires
                 </div>
                 <p class="text-white/90">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
@@ -92,11 +92,14 @@
 
             <div class="flex flex-col gap-6 mb-8">
                 <div class="text-2xl font-semibold text-white">
-                    Additional Notes
+                    Faire un commentaire
                 </div>
-                <p class="text-white/90">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima nesciunt nulla quasi repellat? Harum magnam reprehenderit quam a, architecto placeat?
-                </p>
+                <div class="text-white/90 flex flex-col gap-8 ">
+                    <input type="text" id="description" class="border-[1px] border-white/70 bg-transparent rounded-3xl h-52 w-full lg:w-[800px] pt-50 pl-2">
+                    <button class="bg-purple-400 text-white font-bold py-2 px-4 rounded-full w-[50%]">
+                        Soumettre
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -106,19 +109,19 @@
             <div class="flex flex-col rounded-3xl bg-[#161616] overflow-hidden mb-8 w-full lg:w-[350px]">
                 <div class="bg-[#e63fec] w-full h-10 flex justify-between items-center px-12">
                     <div class="text-black space-y-1">
-                        <p class="font-bold text-base">Ticket Price</p>
+                        <p class="font-bold text-base">Prix des tickets</p>
                     </div>
                 </div>
                 <div>
                     <div class="flex flex-col items-center space-x-2 px-3 py-8 relative">
                         <div class="font-semibold inline-flex items-center px-4 py-0.5 mb-5 rounded-full border-black w-auto bg-transparent">
-                            <span class="text-white/80">Free Entry</span>
+                            <span class="text-white/80">Entrée gratuite</span>
                         </div>
-                        <div class="font-semibold inline-flex items-center px-4 py-0.5 mb-5 rounded-full border-black w-auto bg-transparent bg-yellow-300">
-                            <span class="text-black/80">Book Tickets</span>
+                        <div class="font-semibold inline-flex items-center px-4 py-0.5 mb-5 rounded-full border-black w-auto bg-yellow-300">
+                            <span class="text-black/80">Voir les tickets</span>
                         </div>
-                        <div class="font-semibold inline-flex items-center px-4 py-0.5 mb-5 rounded-full border-black w-auto bg-transparent bg-gray-400">
-                            <span class="text-black/80">Buy as a gift</span>
+                        <div class="font-semibold inline-flex items-center px-4 py-0.5 mb-5 rounded-full border-black w-auto bg-purple-400">
+                            <span class="text-black/80">Acheter</span>
                         </div>
                     </div>
                 </div>
@@ -162,24 +165,29 @@
             </div>
 
             <div class="text-2xl font-semibold text-white mb-4">
-                Event Location
+                Localisation de l'évènement
             </div>
 
             <div class="flex flex-col rounded-3xl bg-[#161616] overflow-hidden mb-8 w-full lg:w-[350px] p-4">
-                <div class="w-full flex items-center justify-between bg-[#161616] p-4">
-                    <!-- Map or location content can be added here -->
+                <div class="bg-[#e63fec] w-full h-10 flex justify-between items-center px-12">
+                    <div class="text-black space-y-1">
+                        <p class="font-bold text-base">Localisation</p>
+                    </div>
+                </div>
+                <div>
+                    <
                 </div>
             </div>
 
             <div class="text-2xl font-semibold text-white mb-4">
-                Share with Friends
+                Partager avec vos amis
             </div>
 
             <div class="w-full flex items-center justify-between  p-4">
                 <i data-lucide="twitter" class="w-10 h-10 rounded-full bg-white"> </i>
                 <i data-lucide="facebook" class="w-10 h-10 rounded-full bg-white"> </i>
                 <i data-lucide="instagram" class="w-10 h-10 rounded-full bg-white"> </i>
-                <i data-lucide="utility-pole" class="w-10 h-10 rounded-full bg-white"> </i>
+                {{-- <i data-lucide="utility-pole" class="w-10 h-10 rounded-full bg-white"> </i> --}}
             </div>
         </div>
     </div>

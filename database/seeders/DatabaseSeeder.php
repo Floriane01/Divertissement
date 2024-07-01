@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Enums\RoleEnum;
 use App\Models\Evenement;
 use App\Models\Role;
 use App\Models\Sponsor;
@@ -19,40 +18,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        // $this->call(class: RoleSeeder::class);
-
-        // $organisateurRole = Role::firstWhere('name', RoleEnum::ORGANISATEUR->value);
-
-
-        // User::factory(count: 5)
-        //     ->create()
-        //     ->each(
-        //         fn (User $user) => $user->assignRole($organisateurRole),
-        //     );
-
-        // User::factory()->create([
-        //     'name' => 'Super Admin',
-        //     'email' => 'admin@test.com',
-        // ])->assignRole(Role::firstWhere('name', RoleEnum::SUPER_ADMIN->value));
-
-
-        // $utilisateurRole = Role::where('name', RoleEnum::UTILISATEUR->value)->first();
-
-
-        //    User::factory(count: 10)
-        //         ->has(
-        //             UtilisateurCard::factory(),
-
-        //         )
-
-        //         ->create()
-
-        //         ->each(
-        //             fn(User $user) => $user->assignRole($utilisateurRole),
-        //         );
-
-        // \App\Models\User::factory(10)->create();
-
         \App\Models\User::factory()->create([
             'nom' => 'Djk',
             'prenom' => 'Divin',
@@ -60,6 +25,7 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$12$U.ieKXuTzN8/RwqFj5i02u9qCRgcQpXj4jb.J4j.botSX0Oyg98VO',
             'telephone' => '90909090',
             'photo' => 'photo',
+            'premium' => '0',
         ]);
         \App\Models\User::factory()->create([
             'nom' => 'Djk',
@@ -68,6 +34,7 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$12$U.ieKXuTzN8/RwqFj5i02u9qCRgcQpXj4jb.J4j.botSX0Oyg98VO',
             'telephone' => '90909090',
             'photo' => 'photo',
+            'premium' => 'false',
         ]);
 
         Sponsor::factory()->count(4)->create();
